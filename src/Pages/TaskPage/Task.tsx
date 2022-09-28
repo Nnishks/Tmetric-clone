@@ -5,12 +5,14 @@ import TaskMain from './TaskMain';
 
 import TaskNav from './TaskNav';
 import styles from "./Task.module.css"
+import EmptyTask from './emptyTask';
 function Task() {
     return (
         <div  className={styles.taskCont}>
         <TaskNav/>
     <TaskFilterNav/>
     <TaskMain/>
+
         </div>
     );
 }

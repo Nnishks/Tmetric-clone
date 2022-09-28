@@ -6,12 +6,14 @@ import { Button, Menu,
     MenuList,
     MenuItem} from '@chakra-ui/react';
     import { ChevronDownIcon } from '@chakra-ui/icons';
+import EmptyTask from './emptyTask';
 function TaskMain() {
     return (
         <div className={styles.taskMainCont} >
-        <Flex>
+        <Flex justifyContent={"space-between"} >
+          <Flex w={'40%'} border={'1px solid red'} gap="2%"  >
         <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+  <MenuButton bg={'#3070f0'} color='white' as={Button} rightIcon={<ChevronDownIcon/>}>
   Source : Internal
   </MenuButton>
   <MenuList>
@@ -20,6 +22,7 @@ function TaskMain() {
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
+
 <Menu>
   <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
   Source : Internal
@@ -30,8 +33,15 @@ function TaskMain() {
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
-<Input/>
+</Flex>
+<Box>
+
+<Input placeholder='Search' />
+</Box>
             </Flex> 
+
+<EmptyTask/>
+
         </div>
     );
 }

@@ -1,73 +1,104 @@
 import { Button, Menu,
     MenuButton,
     MenuList,
-    MenuItem,Input, } from '@chakra-ui/react';
+    MenuItem,Input, Text,Box} from '@chakra-ui/react';
 import React from 'react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import styles from "./Task.module.css"
 function TaskFilterNav() {
     return (
         <div className={styles.taskFilterNav} >
-           <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
-  Client : All
-  </MenuButton>
+          <Box w={'15%'} >
+          <Menu>
+  <Button as={MenuButton} border='1px solid black'    
+  rightIcon={<ChevronDownIcon/>}
+//   textOverflow="ellipsis" 
+//  maxWidth={"90%"} display="inline-block" whiteSpace={"nowrap"} overflow="hidden"
+  // fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}}
+   bg='none' _hover={{bg:"none"}}>
+Client : All 
+  </Button>
   <MenuList>
     <MenuItem> Unassigned</MenuItem>
     <MenuItem> All</MenuItem>
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
-</Menu>   
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+</Menu> 
+          </Box>
+
+          <Box w={'15%'} ><Menu>
+  <Button as={MenuButton} border='1px solid black'   rightIcon={<ChevronDownIcon/>}  fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}}>
   Project : All
-  </MenuButton>
+  </Button>
   <MenuList>
     <MenuItem> Unassigned</MenuItem>
     <MenuItem> All</MenuItem>
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+
+</Box>
+
+          <Box w={'15%'} ><Menu>
+  <Button as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}}>
   Tag : All
-  </MenuButton>
+  </Button>
   <MenuList>
     <MenuItem> Unassigned</MenuItem>
     <MenuItem> All</MenuItem>
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+</Box>
+
+
+
+          <Box w={'15%'} ><Menu>
+  <Button as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}}>
   Status : Open
-  </MenuButton>
+  </Button>
   <MenuList>
     <MenuItem> Unassigned</MenuItem>
     <MenuItem> All</MenuItem>
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+</Box>
+
+
+          <Box w={'15%'} ><Menu>
+  <Button as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}}>
   Creator : Any
-  </MenuButton>
+  </Button>
+  <MenuList>
+    <MenuItem> Unassigned</MenuItem>
+    <MenuItem> All</MenuItem>
+    <MenuItem>Sk Ismile</MenuItem>
+  </MenuList>
+</Menu>
+
+ </Box>
+
+
+
+          <Box w={'15%'} ><Menu>
+  <Button as={MenuButton} border='1px solid black'  fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}}>
+ <Text> Source : Internal</Text>
+  </Button>
   <MenuList>
     <MenuItem> Unassigned</MenuItem>
     <MenuItem> All</MenuItem>
     <MenuItem>Sk Ismile</MenuItem>
   </MenuList>
 </Menu> 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
-  Source : Internal
-  </MenuButton>
-  <MenuList>
-    <MenuItem> Unassigned</MenuItem>
-    <MenuItem> All</MenuItem>
-    <MenuItem>Sk Ismile</MenuItem>
-  </MenuList>
-</Menu> 
+</Box>
+      
+             
+
+
+
+
+
         </div>
     );
 }

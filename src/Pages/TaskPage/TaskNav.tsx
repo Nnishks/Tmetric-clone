@@ -20,14 +20,14 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 function TaskNav() {
     console.log(styles)
     return (
-        <div className={styles.taskNavCont}  >
+        <Box className={styles.taskNavCont} fontSize={{base:"10px",sm:"15px",md:"20px",lg:"20px",xl:"20px"}}   >
        <Text>My Tasks</Text>
        <Text> | </Text>
-       <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+       <Menu size={'10px'}   >
+  <Button as={MenuButton}   rightIcon={<ChevronDownIcon/>} w="30%" fontSize={{base:"100%",sm:"100%",md:"100%",lg:"100%",xl:"100%"}} bg='none' _hover={{bg:"none"}} >
   Select Assignee
-  </MenuButton>
-  <MenuList>
+  </Button>
+  <MenuList  >
     <Input placeholder='Find assigned' />
     <MenuItem> <ImUser/> Unassigned</MenuItem>
     <MenuItem><ImUsers/> All</MenuItem>
@@ -36,7 +36,7 @@ function TaskNav() {
   
   </MenuList>
 </Menu>
-        </div>
+        </Box>
     );
 }
 

@@ -3,15 +3,38 @@
     width: 80%;
     margin: auto;
     border: 1px solid red;
+   
 }
+.emptyTask{
+    width: 100%;
+    height: 50%;
+    /* background-image: url();
+    background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-size: 20%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.emptyTask img{
+width: 20%;
+
+}
+
+
+/* ///////////////////fst nav start  */
 
 .taskNavCont{
 border: 1px solid black;
 display: flex;
 gap: 5%;
-
+align-items: center;
 
 }
+
+
+/* ///////filter nav */
 .taskFilterNav{
 border: 1px solid black;
 display: flex;
