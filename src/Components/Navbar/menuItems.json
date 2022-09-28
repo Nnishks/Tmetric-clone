@@ -1,0 +1,66 @@
+{
+  "tmetric": [
+    {
+      "id": 1,
+      "title": "Time Tracking",
+      "desc": "Capture and control every task you work on"
+    },
+    {
+      "id": 2,
+      "title": "Billing & Invoicing",
+      "desc": "Set billable rates and easily create invoices"
+    },
+    {
+      "id": 3,
+      "title": "Project Management",
+      "desc": "Create projects, set rates and budgets"
+    },
+    {
+      "id": 4,
+      "title": "Team Management",
+      "desc": "Monitor productivity and activity level of your team"
+    },
+    {
+      "id": 5,
+      "title": "Task Management",
+      "desc": "Manage tasks and set up an effective workflow"
+    },
+    {
+      "id": 6,
+      "title": "Time Off",
+      "desc": "Simply ask for days off and control teams attendance"
+    }
+  ],
+  "appIntegration": [
+    {
+      "id": 1,
+      "title": "Jira",
+      "desc": "Time tracking on every task in one click"
+    },
+    {
+      "id": 2,
+      "title": "Asana",
+      "desc": "Start to accurately track time of tasks"
+    },
+    {
+      "id": 3,
+      "title": "Todoist",
+      "desc": "Track time of your lists and tasks"
+    },
+    {
+      "id": 4,
+      "title": "MS Office",
+      "desc": "Get plugin for tracking time in MS Office Online"
+    },
+    {
+      "id": 5,
+      "title": "GitHub",
+      "desc": "Track time spent working on an issue with one mouse click"
+    },
+    {
+      "id": 6,
+      "title": "Freshdesk",
+      "desc": "Track time spent on every support ticket"
+    }
+  ]
+}

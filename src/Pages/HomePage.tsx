@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import MobileMenu from "../Components/Navbar/MobileMenu";
 
 const HomePage = () => {
-  return (
-    <div>HomePage</div>
-  )
-}
+  return <></>;
+};
 
-export default HomePage
+export default HomePage;
