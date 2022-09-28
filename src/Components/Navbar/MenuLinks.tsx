@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import SubmenuItem from "../SubmenuItem";
+import SubmenuItem from "./SubmenuItem";
 import menuItems from "./menuItems.json";
 
 export default function MenuLinks() {
