@@ -1,0 +1,25 @@
+
+.taskCont{
+    width: 80%;
+    margin: auto;
+    border: 1px solid red;
+}
+
+.taskNavCont{
+border: 1px solid black;
+display: flex;
+gap: 5%;
+
+
+}
+.taskFilterNav{
+border: 1px solid black;
+display: flex;
+gap: 2%;
+margin-top: 2%;
+}
+.taskMainCont{
+    border: 1px solid red;
+    margin-top: 2%;
+    height: 1000px;
+}
