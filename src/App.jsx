@@ -1,11 +1,13 @@
-import "./App.css";
+// import "./App.css";
 import Login from "./Pages/Login";
+import Mywork from "./Pages/Work";
 
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      {/* <Login/> */}
+     <Mywork />
     </div>
   );
 }

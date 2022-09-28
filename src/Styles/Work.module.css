@@ -1,0 +1,80 @@
+.tasktopcard{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 35px;
+    
+    
+}
+.topchild1{
+    display: flex;
+    width: 39%;
+    min-height: 150px;
+    border: 1px solid #d0d6db;
+    border-radius: 0.375rem;
+   
+}
+.topheading{
+     /* border: 1px solid red;  */
+    height: fit-content;
+    text-align:justify;
+    line-height: 18px;
+    margin-left: 10px;
+    padding: 0px;
+    font-style: italic;
+    width:auto;
+    margin-top: 5px;
+    /* font-weight: bold; */
+    
+
+}
+.starticon{
+     /* border: 1px solid red;  */
+    height: fit-content;
+    margin-left: 112px;
+    margin-top: 8px;
+    color:rgb(73, 149, 73);
+    font-size:38px;
+    padding: 0px;
+
+}
+.topchild2{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.timeicon{
+    height: fit-content;
+    margin-right: 15px;
+    margin-top: 8px;
+    color:rgb(29, 30, 29);
+    font-size:28px;
+    padding: 0px;
+   /* justify-self: flex-end */
+    /* float: right; */
+}
+.topchild2cover{
+
+    width: 50%;
+    min-height: 150px;
+    border: 1px solid #d0d6db;
+    border-radius: 0.375rem;
+    margin-left: 10px;
+    padding-left: 10px;
+    text-align:justify;
+    line-height: 18px;
+}
+.secflexdiv{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid red;
+    width: 92%;
+    margin-left: 15px;
+    margin-top: 20px;
+    gap: 10px;
+}
+.gridtoptasksec{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 1px solid red;
+}
