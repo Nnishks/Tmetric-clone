@@ -10,9 +10,49 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUpAction } from "../ReduxComponents/User/user.action";
+import axios from "axios";
+
+// type init = {
+//   name: string,
+//   email: string,
+//   password: number,
+// };
 
 const SignUp = () => {
+  const [user, setUser] = useState({});
+
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("hi");
+  //   dispatch(signUpAction(user));
+  //   console.log(user);
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(user)
+    await axios.post("http://localhost:8080/user/signup",{ ...user })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Flex
@@ -45,7 +85,14 @@ const SignUp = () => {
               <FormLabel fontSize="14px" color="#857e88">
                 Name
               </FormLabel>
-              <Input placeholder="jhon smith" size="sm" marginBottom="4" />
+              <Input
+                placeholder="jhon smith"
+                size="sm"
+                marginBottom="4"
+                name="name"
+                onChange={handleChange}
+                type="text"
+              />
               <FormLabel fontSize="14px" color="#857e88">
                 Email
               </FormLabel>
@@ -53,11 +100,20 @@ const SignUp = () => {
                 placeholder="jhonsmith@mail.com"
                 size="sm"
                 marginBottom="4"
+                name="email"
+                onChange={handleChange}
+                type="email"
               />
               <FormLabel fontSize="14px" color="#857e88">
                 Password
               </FormLabel>
-              <Input placeholder="Enter your password" size="sm" />
+              <Input
+                placeholder="Enter your password"
+                size="sm"
+                name="passowrd"
+                onChange={handleChange}
+                type="password"
+              />
               <Button
                 bg="#3070f0"
                 color="white"
@@ -65,8 +121,10 @@ const SignUp = () => {
                 size="sm"
                 marginTop="6"
                 _hover={{ bg: "#3070f0" }}
+                type={"submit"}
+                onClick={handleSubmit}
               >
-                Log In
+                Sign In
               </Button>
             </FormControl>
             <Flex direction="row" marginTop="6">
