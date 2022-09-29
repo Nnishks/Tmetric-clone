@@ -1,11 +1,12 @@
 import "./App.css";
-import Login from "./Pages/Login";
-
+import AllRoutes from "./Pages/AllRoutes";
+import Time from "./Pages/TimePage/Time";
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <AllRoutes />
+      <Time/>
     </div>
   );
 }
