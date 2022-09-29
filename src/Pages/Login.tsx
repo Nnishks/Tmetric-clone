@@ -19,12 +19,12 @@ const Login = () => {
     <>
       <Flex
         border="1px solid grey"
-        borderRadius="4"
+        borderRadius="8"
         flexDirection="column"
-        width="30%"
-        margin="auto"
+        width="28%"
+        margin="1.5rem auto"
       >
-        <Box backgroundColor="#f2f5fc">
+        <Box backgroundColor="#f2f5fc" borderRadius="8">
           <Center marginTop="14">
             <Img src="https://id.tmetric.com/images/tmetric_logo_and_text.svg" />
           </Center>
@@ -65,43 +65,83 @@ const Login = () => {
             </Button>
           </FormControl>
         </Box>
-        <Flex direction="row" padding="8" marginTop="-14">
+        <Flex direction="row" padding="8" marginTop="-12">
           <Divider bgColor="3070f0" height="5px" width="100%" margin="2" />
-          <Box>or</Box>
+          <Box>
+            <Text color="3070f0" fontWeight="400">
+              or
+            </Text>
+          </Box>
           <Divider bgColor="3070f0" height="5px" width="100%" margin="2" />
         </Flex>
 
-        <Box padding="8">
+        <Box padding="8" marginTop="-12">
           <Flex
-            border="1px solid red"
+            border="1px solid grey"
+            borderRadius="4"
             marginBottom="3"
             padding="2"
+            justifyContent="center"
+            gap="4"
           >
             <Img src="https://id.tmetric.com/images/google_logo.svg" />
-            <Text fontSize="14px" color="#777e85" fontWeight="400">
+            <Text fontSize="14px" color="#777e85" fontWeight="600">
               Log In with Google
             </Text>
           </Flex>
-          <Flex border="1px solid red" marginBottom="3" padding="2">
+          <Flex
+            border="1px solid grey"
+            borderRadius="4"
+            marginBottom="3"
+            padding="2"
+            justifyContent="center"
+            gap="4"
+          >
             <Img src="https://id.tmetric.com/images/microsoft_logo.svg" />
-            <Text fontSize="14px" color="#777e85" fontWeight="400">
+            <Text fontSize="14px" color="#777e85" fontWeight="600">
               Log In with Microsoft
             </Text>
           </Flex>
-          <Flex border="1px solid red" marginBottom="3" padding="2">
+          <Flex
+            border="1px solid grey"
+            borderRadius="4"
+            marginBottom="3"
+            padding="2"
+            justifyContent="center"
+            gap="4"
+          >
             <Img src="https://id.tmetric.com/images/apple_logo.svg" />
-            <Text fontSize="14px" color="#777e85" fontWeight="400">
+            <Text fontSize="14px" color="#777e85" fontWeight="600">
               Log In with Apple
             </Text>
           </Flex>
         </Box>
-        <Divider bgColor="3070f0" height="5px" width="100%" margin="2" />
-        <Flex justifyContent="space-between">
-          <Text>Can't Log in?</Text>
-          <Text>Sign Up</Text>
+        <Divider
+          bgColor="3070f0"
+          height="5px"
+          width="85%"
+          margin="auto"
+          position="relative"
+          top="-6"
+        />
+        <Flex
+          justifyContent="space-between"
+          width="85%"
+          margin="auto"
+          padding="2"
+          color="#3070f0"
+        >
+          <Text fontSize="14px" fontWeight="600">
+            Can't Log in?
+          </Text>
+          <Text fontSize="14px" fontWeight="600">
+            Sign Up
+          </Text>
         </Flex>
       </Flex>
-      <Text fontSize="14px">Privacy Policy</Text>
+      <Text fontSize="14px" color="#3070f0" fontWeight="600">
+        Privacy Policy
+      </Text>
     </>
   );
 };
