@@ -24,6 +24,7 @@ const Mywork = () => {
         <BiNotepad />
         <BiTimeFive /> */}
         {/* Top card */}
+        <div  className={styles.taskmaindiv} >
         <div className={styles.tasktopcard}>
 
             <div className={styles.topchild1}>
@@ -104,6 +105,7 @@ const Mywork = () => {
               </div>
             </div>
 
+        </div>
         </div>
     </div>
   )
