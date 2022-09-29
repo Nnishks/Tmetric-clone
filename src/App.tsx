@@ -1,7 +1,9 @@
 
 import "./App.css";
-import Login from "./Pages/Login";
-import Task from "./Pages/TaskPage/Task";
+
+
+
+import AllRoutes from "./Pages/AllRoutes";
 
 
 
@@ -9,7 +11,9 @@ function App() {
   return (
     <div className="App">
 
-<Task/>
+
+      <AllRoutes />
+
     </div>
   );
 }
