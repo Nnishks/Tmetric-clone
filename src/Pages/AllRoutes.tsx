@@ -1,6 +1,13 @@
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
+
 // routes will be handled from here - Govind
 const AllRoutes = () => {
-  return <div></div>;
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
+  );
 };
 
 export default AllRoutes;

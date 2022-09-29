@@ -1,8 +1,11 @@
-import React from "react";
-import MobileMenu from "../Components/Navbar/MobileMenu";
+import Navbar from "../Components/Navbar/Navbar";
 
 const HomePage = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default HomePage;
