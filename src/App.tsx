@@ -1,11 +1,10 @@
 import "./App.css";
-import Login from "./Pages/Login";
-
+import AllRoutes from "./Pages/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <AllRoutes />
     </div>
   );
 }
