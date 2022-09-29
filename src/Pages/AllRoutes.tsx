@@ -1,15 +1,15 @@
-import React from 'react'
-
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
+import Mywork from "./Work";
 
 // routes will be handled from here - Govind
 const AllRoutes = () => {
   return (
-    <div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/work" element={<Mywork />} />
+    </Routes>
+  );
+};
 
-        
-
-    </div>
-  )
-}
-
-export default AllRoutes
+export default AllRoutes;
