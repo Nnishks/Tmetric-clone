@@ -12,7 +12,7 @@ function TaskFilterNav() {
           <Menu >
               <Button  as={MenuButton}  border='1px solid black'    
               rightIcon={<ChevronDownIcon/>}
-              w='100%' h={'70%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}}  >
+              w='100%' h={'90%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}}  >
                Client : All 
               </Button>
   <MenuList>
@@ -24,7 +24,7 @@ function TaskFilterNav() {
           </Box>
 
           <Box w={'15%'} ><Menu>
-  <Button  as={MenuButton} border='1px solid black'   rightIcon={<ChevronDownIcon/>}  w='100%' h={'70%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
+  <Button  as={MenuButton} border='1px solid black'   rightIcon={<ChevronDownIcon/>}  w='100%' h={'90%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
   Project : All
   </Button>
   <MenuList>
@@ -37,7 +37,7 @@ function TaskFilterNav() {
 </Box>
 
           <Box w={'15%'} ><Menu>
-  <Button  as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  w='100%' h={'70%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
+  <Button  as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  w='100%' h={'90%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
   Tag : All
   </Button>
   <MenuList>
@@ -51,7 +51,7 @@ function TaskFilterNav() {
 
 
           <Box w={'15%'} ><Menu>
-  <Button  as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  w='100%' h={'70%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
+  <Button  as={MenuButton} border='1px solid black'  rightIcon={<ChevronDownIcon/>}  w='100%' h={'90%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >
   Status : Open
   </Button>
   <MenuList>
@@ -66,7 +66,7 @@ function TaskFilterNav() {
           <Box w={'15%'} ><Menu>
   <Button  as={MenuButton}
   
-  rightIcon={<ChevronDownIcon/>} border='1px solid black'  w='100%' h={'70%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >    
+  rightIcon={<ChevronDownIcon/>} border='1px solid black'  w='100%' h={'90%'} bg='none' _hover={{bg:"none"}} textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}} >    
   Creator : Any
   </Button>
   <MenuList>
@@ -81,7 +81,7 @@ function TaskFilterNav() {
 
 
           <Box w={'17%'} ><Menu>
-  <Button w='100%' h={'70%'} bg='none' _hover={{bg:"none"}}   as={MenuButton} border='1px solid black' textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}}  >
+  <Button w='100%' h={'90%'} bg='none' _hover={{bg:"none"}}   as={MenuButton} border='1px solid black' textAlign={'left'} p='0px'  fontSize={{base:"30%",sm:"60%",md:"70%",lg:"100%",xl:"100%"}}  >
  <Text> Source : Internal</Text>
   </Button>
   <MenuList>
