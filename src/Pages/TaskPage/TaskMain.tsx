@@ -11,7 +11,9 @@ function TaskMain() {
     return (
         <div className={styles.taskMainCont} >
         <Flex justifyContent={"space-between"} >
-          <Flex w={'40%'} border={'1px solid red'} gap="2%"  >
+          <Flex w={'40%'}
+          //  border={'1px solid red'}
+            gap="2%"  >
         <Menu>
   <MenuButton bg={'#3070f0'} color='white' as={Button} rightIcon={<ChevronDownIcon/>}>
   Source : Internal
