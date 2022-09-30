@@ -10,7 +10,7 @@ import React from 'react'
 import GetCalender from './Calendar'
 import Timeline from './Timeline'
 import WorkTimeEntry from './WorkTimeEntry'
-import Listing from './Listing'
+import Listing from './TimeListing'
 
 const Time = () => {
   return (

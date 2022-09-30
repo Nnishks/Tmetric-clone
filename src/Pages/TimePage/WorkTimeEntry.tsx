@@ -2,7 +2,8 @@ import { Box, Button, ButtonGroup, Checkbox, Flex } from '@chakra-ui/react'
 import React,{useState} from 'react'
 import AddBreak from './AddBreak'
 import AddTimeEntry from './AddTimeEntry'
-import Listing from './Listing'
+import BreakListing from './BreakListing'
+import TimeListing from './TimeListing'
 
 
 
@@ -54,7 +55,8 @@ function WorkTimeEntry() {
         {showAddEntry && <AddTimeEntry handleCancel={handleCancel} handleSubmit={handleSubmit}/>}
         {showAddBreaky && <AddBreak handleCancel={handleCancel} />}
         <hr/>
-        <Listing  TimeStampList={TimeStampList}/>
+        <TimeListing  TimeStampList={TimeStampList}/>
+        <BreakListing/>
     </Box>
   )
 }

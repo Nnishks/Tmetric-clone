@@ -13,7 +13,7 @@ type PropsType={
     TimeStampList:Array<propChildType>
 }
 
-function Listing(prop:PropsType) {
+function TimeListing(prop:PropsType) {
   return (
     <Box  >
     {prop.TimeStampList.map(item=><Box key={new Date().toDateString()+item.startTime}><Flex  p="15px 20px"  justifyContent="space-between">
@@ -33,4 +33,4 @@ function Listing(prop:PropsType) {
   )
 }
 
-export default Listing
+export default TimeListing
