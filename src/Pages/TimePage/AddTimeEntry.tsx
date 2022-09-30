@@ -97,7 +97,7 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
             <Box>
 
             <FormLabel fontSize="12px" mb="3px">Duration</FormLabel>
-            <Input type="text" borderColor="gray" value={timeFormData.duration} onChange={handleChange} size="sm" name="duration" borderRadius="5px" placeholder='h:mm' htmlSize={6} width="auto"></Input>
+            <Input type="text" borderColor="gray" value={timeFormData.duration} isRequired onChange={handleChange} size="sm" name="duration" borderRadius="5px" placeholder='h:mm' htmlSize={6} width="auto"></Input>
             </Box>
             </Flex>
             
