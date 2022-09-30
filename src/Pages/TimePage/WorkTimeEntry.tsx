@@ -2,11 +2,13 @@ import { Box, Button, ButtonGroup, Checkbox, Flex } from '@chakra-ui/react'
 import React,{useState} from 'react'
 import AddBreak from './AddBreak'
 import AddTimeEntry from './AddTimeEntry'
-import Listing from './Listing'
+import BreakListing from './BreakListing'
+import TimeListing from './TimeListing'
 
 
 
-const storeData=localStorage.getItem("ListStamps")
+const storeTimeData=localStorage.getItem("ListStamps")
+const storeBreakData=localStorage.getItem("BreakStamps")
 
 type TimeStampType={
     description?: string;
@@ -16,12 +18,24 @@ type TimeStampType={
     project?: string;
     tag?:string
 }
-const initList:Array<TimeStampType>=storeData? JSON.parse(storeData): []
+
+type BreakStamptype={
+    Break:"Break";
+    startTime:string;
+    endTime:string;
+    duration:string;
+}
+
+const initTimeList:Array<TimeStampType>=storeTimeData? JSON.parse(storeTimeData): []
+const initStampList:Array<BreakStamptype>=storeBreakData? JSON.parse(storeBreakData): []
+
 
 function WorkTimeEntry() {
     const [showAddEntry, setShowAddEntry]=useState<boolean>(false)
     const [showAddBreaky, setShowAddBreak]=useState<boolean>(false)
-    const [TimeStampList, setTimeStampList]=useState<Array<TimeStampType>>(initList)
+    const [TimeStampList, setTimeStampList]=useState<Array<TimeStampType>>(initTimeList)
+    const [breakStampList, setBreakStampList]=useState<Array<BreakStamptype>>(initStampList)
+
 
     const handleSubmit=(e:React.FormEvent<HTMLFormElement>, state:TimeStampType)=>{
         e.preventDefault()
@@ -29,6 +43,13 @@ function WorkTimeEntry() {
         let modefiedList=[...TimeStampList,state]
         localStorage.setItem("ListStamps", JSON.stringify(modefiedList))
         setTimeStampList(modefiedList)
+    }
+    const handleBreakSubmit=(e:React.FormEvent<HTMLFormElement>, state:BreakStamptype)=>{
+        e.preventDefault()
+        console.log("ok")
+        let modefiedList=[...breakStampList,state]
+        localStorage.setItem("BreakStamps", JSON.stringify(modefiedList))
+        setBreakStampList(modefiedList)
     }
     
 
@@ -52,9 +73,10 @@ function WorkTimeEntry() {
         </Box>
         <hr />
         {showAddEntry && <AddTimeEntry handleCancel={handleCancel} handleSubmit={handleSubmit}/>}
-        {showAddBreaky && <AddBreak handleCancel={handleCancel} />}
+        {showAddBreaky && <AddBreak handleCancel={handleCancel} handleBreakSubmit={handleBreakSubmit}/>}
         <hr/>
-        <Listing  TimeStampList={TimeStampList}/>
+        <TimeListing  TimeStampList={TimeStampList}/>
+        <BreakListing breakStampList={breakStampList}/>
     </Box>
   )
 }
