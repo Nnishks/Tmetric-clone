@@ -1,5 +1,6 @@
 import { Box, Container } from "@chakra-ui/react";
 import Awards from "../Components/Homepage/Awards";
+import CTAComponent from "../Components/Homepage/CTAComponent";
 import HeroSection from "../Components/Homepage/HeroSection";
 import Navbar from "../Components/Navbar/Navbar";
 
@@ -16,6 +17,9 @@ const HomePage = () => {
         <Container maxW="8xl">
           <Awards />
         </Container>
+      </Box>
+      <Box>
+        <CTAComponent />
       </Box>
     </>
   );
