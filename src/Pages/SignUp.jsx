@@ -11,9 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { signUpAction } from "../ReduxComponents/User/user.action";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { signupAction } from "../ReduxComponents/User/user.action";
 
 // type init = {
 //   name: string,
@@ -23,7 +22,8 @@ import axios from "axios";
 
 const SignUp = () => {
   const [user, setUser] = useState({});
-
+  const token = useSelector((store)=>store.auth.token);
+  console.log("token is", token)
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -34,24 +34,26 @@ const SignUp = () => {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("hi");
-  //   dispatch(signUpAction(user));
-  //   console.log(user);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("hi");
+    dispatch(signupAction(user));
+    console.log(user);
+  };
+
+  // let postData = async () => {
+  //   await axios
+  //     .post("http://localhost:8080/user/signup", { ...user })
+  //     .then((res) => {
+  //       console.log("res is ", res);
+  //     });
   // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log(user)
-    await axios.post("http://localhost:8080/user/signup",{ ...user })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(user);
+  //   postData();
+  // };
 
   return (
     <>
@@ -110,7 +112,7 @@ const SignUp = () => {
               <Input
                 placeholder="Enter your password"
                 size="sm"
-                name="passowrd"
+                name="password"
                 onChange={handleChange}
                 type="password"
               />

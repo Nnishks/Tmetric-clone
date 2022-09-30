@@ -1,20 +1,38 @@
 import {
+  USER_LOGIN_ERROR,
+  USER_LOGIN_LOADING,
   USER_SIGNUP_ERROR,
   USER_SIGNUP_LOADING,
   USER_SIGNUP_SUCCESSFULL,
 } from "./user.types";
 import axios from "axios";
 
-export const signUpAction = (creds) => async (dispatch) => {
-  console.log("user details from action", creds);
-  await axios
-    .post("http://localhost:8080/user/signup", creds)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log(err);
+export const signupAction = (creds) => async (dispatch) => {
+  dispatch({ type: USER_SIGNUP_LOADING });
+  try {
+    let response = await axios.post("http://localhost:8080/user/signup", creds);
+    console.log(
+      `${response.data.userKey.name}${response.data.userKey.email}${response.data.userKey.password}`
+    );
+    dispatch({
+      type: USER_SIGNUP_SUCCESSFULL,
+      payload: `${response.data.userKey.name}${response.data.userKey.email}${response.data.userKey.password}`,
     });
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: USER_SIGNUP_ERROR,
+    });
+  }
 };
 
-// export const loginAction = (creds) => async (dispatch) => {};
+export const loginAction = (creds) => async (dispatch) => {
+  dispatch({ type: USER_LOGIN_LOADING });
+  try {
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: USER_LOGIN_ERROR,
+    });
+  }
+};

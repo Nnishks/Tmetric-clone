@@ -11,6 +11,7 @@ const initState = {
 };
 
 export const authReducer = (state = initState, { type, payload }) => {
+  console.log("payload is", payload)
   switch (type) {
     case USER_SIGNUP_LOADING: {
       return {
@@ -30,7 +31,7 @@ export const authReducer = (state = initState, { type, payload }) => {
         ...state,
         loading: false,
         error: false,
-        token: payload.token,
+        token: payload,
       };
     }
     default: {
