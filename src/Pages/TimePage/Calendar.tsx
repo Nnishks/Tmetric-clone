@@ -1,4 +1,4 @@
-import { Button, Flex, Menu, MenuButton, MenuList, Text } from '@chakra-ui/react';
+import { Button, ButtonGroup, Flex, Menu, MenuButton, MenuList, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import "react-calendar/dist/Calendar.css";
@@ -9,15 +9,21 @@ import { IoIosArrowBack,IoIosArrowForward } from "react-icons/io"
 
 function GetCalender(){
   const [value, setValue] = useState<Date>(new Date());
+//   const [cloneDate, SetCloneDate]=useState<Date>(new Date(value.valueOf()))
 
-  let DateString=value.toDateString().split(" ")
+  let DateString=value.toDateString().toUpperCase().split(" ")
 
   const onChange=(date:Date)=>{
-    // console.log(typeof(date))
+    
     setValue(date)
   }
   const handleDate=(val:number)=>{
-   
+    if(val===0){
+        onChange(new Date())
+    }
+    else{
+    onChange(new Date(value.setDate(value.getDate()+val)))
+    }
   }
 //   console.log(typeof(value.getDate()))
 
@@ -26,7 +32,7 @@ function GetCalender(){
     <Menu> 
   <MenuButton as={Button}  bg="transparent" _hover={{border:"2px solid gray"}}>
     <Flex gap="10px" align="center">
-    <FaCalendarAlt/><Text>{`${DateString[0]}, ${DateString[2]}  ${DateString[1]} ${DateString[3]}`}</Text>
+    <FaCalendarAlt/><Text fontSize="lg" fontWeight="semibold">{`${DateString[0]}, ${DateString[2]}  ${DateString[1]} ${DateString[3]}`}</Text>
     </Flex>
   </MenuButton>
   <MenuList>
@@ -34,10 +40,10 @@ function GetCalender(){
   </MenuList>
   </Menu>
   
- <Flex>
-  <IoIosArrowBack onClick={()=>handleDate(-1)}/>
-  <GoPrimitiveDot onClick={()=>handleDate(0)}/>
-  <IoIosArrowForward onClick={()=>handleDate(1)}/>
+ <Flex gap={0}>
+  <Button onClick={()=>handleDate(-1)} borderRadius="50%" p="0" bg="transparent" _hover={{border:"2px solid gray"}} size="sm"><IoIosArrowBack/></Button>
+  <Button onClick={()=>handleDate(0)} borderRadius="50%" p="0" bg="transparent" _hover={{border:"2px solid gray"}}size="sm" disabled={value.getDate()===new Date().getDate()}><GoPrimitiveDot/></Button>
+  <Button onClick={()=>handleDate(1)} borderRadius="50%"p="0" bg="transparent" _hover={{border:"2px solid gray"}} size="sm" disabled={value.getDate()===new Date().getDate()} ><IoIosArrowForward /></Button>
  </Flex>
     </Flex>
   );
