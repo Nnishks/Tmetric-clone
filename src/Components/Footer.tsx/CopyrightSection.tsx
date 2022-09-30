@@ -8,7 +8,6 @@ export default function CopyrightSection() {
   return (
     <Box borderTop="1px solid lightgray" padding="1rem 0">
       <Flex
-        textAlign="center"
         alignItems={{
           base: "center",
           xl: "space-between",
