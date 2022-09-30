@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Image,
   Link,
   SimpleGrid,
   Text,

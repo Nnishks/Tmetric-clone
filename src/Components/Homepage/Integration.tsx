@@ -6,7 +6,6 @@ import {
   Icon,
   Image,
   Link,
-  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { AiOutlineArrowRight } from "react-icons/ai";

@@ -1,4 +1,4 @@
-import { Box, Flex, Icon } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { AiFillYoutube } from "react-icons/ai";
 import { BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
