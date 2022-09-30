@@ -6,7 +6,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 export default function CopyrightSection() {
   let date = new Date();
   return (
-    <Box borderTop="1px solid lightgray" padding="1rem 0">
+    <Box padding="1rem 0">
       <Flex
         alignItems={{
           base: "center",
