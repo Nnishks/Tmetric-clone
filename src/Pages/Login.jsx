@@ -6,17 +6,18 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  Heading,
   Img,
   Input,
-  Spacer,
   Text,
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../ReduxComponents/User/user.action";
 
 const Login = () => {
   const [user, setUser] = useState([]);
+  const dispatch = useDispatch();
 
   const getData = async () => {
     try {
@@ -28,6 +29,20 @@ const Login = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(user);
+    dispatch(loginAction(user));
+  }
 
   return (
     <>
@@ -62,11 +77,20 @@ const Login = () => {
               placeholder="jhonsmith@mail.com"
               size="sm"
               marginBottom="4"
+              name="email"
+              type="email"
+              onChange={handleChange}
             />
             <FormLabel fontSize="14px" color="#857e88">
               Password
             </FormLabel>
-            <Input placeholder="Enter your password" size="sm" />
+            <Input
+              placeholder="Enter your password"
+              size="sm"
+              name="password"
+              type="password"
+              onChange={handleChange}
+            />
             <Button
               bg="#3070f0"
               color="white"
@@ -74,6 +98,8 @@ const Login = () => {
               size="sm"
               marginTop="6"
               _hover={{ bg: "#3070f0" }}
+              type={"submit"}
+              onClick={handleSubmit}
             >
               Log In
             </Button>
