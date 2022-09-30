@@ -11,6 +11,8 @@ import {
   Input,
 } from "@chakra-ui/react";
 import {useState} from "react"
+
+let data=["wrfhwirfweifw 1","wrfhwirfweifw 2","wrfhwirfweifw 3","wrfhwirfweifw 4","wrfhwirfweifw 5",]
 export default function FstAdd() {
   const[play,setPlay]=useState(false)
   const[markComplete,setMarkComplete]=useState(false)
@@ -30,11 +32,14 @@ export default function FstAdd() {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-                wefwejfjwepofowjpjpqoidru09qurfqrfuw0urfwiurfiwrfiwhiwhfw3irfi880
+               {
+
+                data.map((ele)=><Box borderTop={'1px solid gray'} >
+<Text>{ele}</Text> 
+
+                </Box>)
+
+               }
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
