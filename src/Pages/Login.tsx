@@ -12,9 +12,23 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Login = () => {
+  const [user, setUser] = useState([]);
+
+  const getData = async () => {
+    try {
+      let response = await axios.get("http://localhost:8080/user");
+      console.log(response);
+    } catch (err) {}
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <Flex
