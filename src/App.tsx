@@ -6,9 +6,6 @@ function App() {
   return (
     <div className="App">
       <AllRoutes />
-      {/* <AllRoutes /> */}
-      {/* <Login/> */}
-      {/* <SignUp/> */}
     </div>
   );
 }
