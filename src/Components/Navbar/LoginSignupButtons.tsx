@@ -1,9 +1,10 @@
 import { Flex, Box } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 export default function LoginSignupButtons() {
   return (
     <Flex alignItems="center" gap="1rem">
-      <a href="#">
+      <NavLink to={"/login"}>
         <Box
           transition="0.15s all ease-in"
           _hover={{
@@ -13,8 +14,8 @@ export default function LoginSignupButtons() {
         >
           Log In
         </Box>
-      </a>
-      <a href="#">
+      </NavLink>
+      <NavLink to="/signup">
         <Box
           sx={{
             border: "1px solid #3070F1",
@@ -31,7 +32,7 @@ export default function LoginSignupButtons() {
         >
           Sign Up
         </Box>
-      </a>
+      </NavLink>
     </Flex>
   );
 }
