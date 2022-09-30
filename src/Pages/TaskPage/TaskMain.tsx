@@ -9,6 +9,7 @@ import { Button, Menu,
 import EmptyTask from './emptyTask';
 import FstAdd from './taskAddfst';
 function TaskMain() {
+  // const [isEmpty,setIsEmpty]=useState()
     return (
         <div className={styles.taskMainCont} >
         <Flex  borderBottom='1px solid black' h={'50px'} alignItems='center' justifyContent={"space-between"} >
@@ -51,9 +52,9 @@ function TaskMain() {
 
 
 {/* ///////////////////////inside */}
-{/* <EmptyTask/> */}
+{false ?<EmptyTask/>:
 
-<FstAdd/>
+<FstAdd/>}
 
         </div>
     );

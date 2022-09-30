@@ -5,7 +5,7 @@ import { Box, Flex,Accordion,
     AccordionIcon,
     Button,Text,Input } from "@chakra-ui/react";
 
-
+    
 export default function FstAdd(){
 
 return <div  >
@@ -39,44 +39,44 @@ return <div  >
 {/* ////////////////// right box*/}
 <Box w={'50%'} borderLeft='1px solid black' h={'650px'} >
 
-<Flex justifyContent={"space-between"} >
-<Flex alignItems={'center'} padding={'2%'} gap='20px' > 
+<Flex justifyContent={"space-between"} w='100%' >
+<Flex alignItems={'center'}  gap='20px' > 
 
 
-<i style={{color:"green",fontSize:"40px"}} class="fa-solid fa-circle-play"></i> 
-<Button> <i class="fa-solid fa-check"></i>  Mark Complete</Button>
+<i style={{color:"green",fontSize:"40px"}} className="fa-solid fa-circle-play"></i> 
+<Button> <i className="fa-solid fa-check"></i>  Mark Complete</Button>
  </Flex  >
-<Flex gap={'40px'} alignItems="center" p={'2%'} >
-<i class="fa-solid fa-arrow-right"></i>
-<i class="fa-sharp fa-solid fa-share-nodes"></i>
-<i class="fa-solid fa-ellipsis"></i>
+<Flex gap={'40px'} alignItems="center" >
+<i className="fa-solid fa-arrow-right"></i>
+<i className="fa-sharp fa-solid fa-share-nodes"></i>
+<i className="fa-solid fa-ellipsis"></i>
 </Flex>
 </Flex>
 {/* //////////////////////////////////////////////// */}
 {/* task name */}
-<h1>task name</h1>
-<Flex justifyContent="space-between" >
+<Text fontSize={'2xl'} >task name</Text>
+<Flex justifyContent="space-between" w={'40%'} >
   <Text>Project</Text>
   <Text>Project name</Text>
 </Flex>
 
-<Flex justifyContent="space-between" >
+<Flex justifyContent="space-between" w={'40%'} >
   <Text>Assignee</Text>
   <Text>SK ISMILE</Text>
 </Flex>
 
-<Flex justifyContent="space-between" >
+<Flex justifyContent="space-between" w="40%" >
   <Text>Due Date</Text>
-  <Text>Calender</Text>
+  <Input w={'50px'} type={'date'} />
 </Flex>
 
 <Box>
-  <Input placeholder="task descreption" />
+  <Input placeholder="task descreption"  />
 </Box>
 
-<Flex justifyContent="space-between" >
+<Flex justifyContent="space-between" w="40%" >
   <Text>Estimate</Text>
-  <Text>None</Text>
+  <Text> None</Text>
 </Flex>
 
 </Box>
