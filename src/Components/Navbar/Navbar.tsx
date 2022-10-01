@@ -11,24 +11,33 @@ const Navbar = () => {
 
   return (
     <>
-      {maxWidthLargeScreen ? (
-        <Container padding="0.6rem 0" maxW="8xl">
-          <Flex justifyContent="space-between" alignItems="center">
-            <Flex alignItems="center" gap="1rem">
-              <NavLink to="/">
-                <BrandLogo />
-              </NavLink>
-              <LanguageButton />
+      <Box
+        position="sticky"
+        top="0"
+        left="0"
+        backgroundColor="white"
+        zIndex="999"
+        borderBottom="1px solid lightgray"
+      >
+        {maxWidthLargeScreen ? (
+          <Container padding="0.6rem 0" maxW="8xl">
+            <Flex justifyContent="space-between" alignItems="center">
+              <Flex alignItems="center" gap="1rem">
+                <NavLink to="/">
+                  <BrandLogo />
+                </NavLink>
+                <LanguageButton />
+              </Flex>
+              <Box>
+                <MenuLinks />
+              </Box>
+              <LoginSignupButtons />
             </Flex>
-            <Box>
-              <MenuLinks />
-            </Box>
-            <LoginSignupButtons />
-          </Flex>
-        </Container>
-      ) : (
-        <MobileMenu />
-      )}
+          </Container>
+        ) : (
+          <MobileMenu />
+        )}
+      </Box>
     </>
   );
 };

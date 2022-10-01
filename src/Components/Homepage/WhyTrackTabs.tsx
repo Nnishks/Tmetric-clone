@@ -138,7 +138,10 @@ export default function WhyTrackTabs() {
             </TabPanel>
           ))}
         </TabPanels>
-        <TabList overflowX="scroll" overflowY="hidden">
+        <TabList
+          overflowX={lessthantab ? "scroll" : "hidden"}
+          overflowY="hidden"
+        >
           {data.map(({ id, title }) => (
             <Tab key={id} fontWeight="medium">
               {title}

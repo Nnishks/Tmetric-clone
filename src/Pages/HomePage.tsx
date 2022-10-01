@@ -8,6 +8,7 @@ import ManageTeam from "../Components/Homepage/ManageTeam";
 import Monitor from "../Components/Homepage/Monitor";
 import Profiltability from "../Components/Homepage/Profitability";
 import Reviews from "../Components/Homepage/Reviews";
+import WhatMakesUsBest from "../Components/Homepage/WhatMakesUsBest";
 import WhyChoose from "../Components/Homepage/WhyChoose";
 import WhyTrackTabs from "../Components/Homepage/WhyTrackTabs";
 import Navbar from "../Components/Navbar/Navbar";
@@ -26,6 +27,7 @@ const HomePage = () => {
           <Awards />
         </Container>
       </Box>
+      {/* <WhatMakesUsBest /> */}
       <Box backgroundColor="#F6F7F8">
         <ManageTeam />
       </Box>

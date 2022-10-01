@@ -14,7 +14,7 @@ export default function MobileMenu() {
       <Flex
         alignItems="center"
         justifyContent="space-between"
-        padding="1rem 2rem"
+        padding="0.75rem 2rem"
         position="relative"
       >
         <Box></Box>
@@ -40,10 +40,15 @@ export default function MobileMenu() {
           backgroundColor="white"
           paddingBottom="3rem"
         >
-          <Accordian menuTitle="Why TMetric" menuItems={menuItems.tmetric} />
+          <Accordian
+            menuTitle="Why TMetric"
+            menuItems={menuItems.tmetric}
+            subTitle="Features"
+          />
           <Accordian
             menuTitle="Apps & Integrations"
             menuItems={menuItems.appIntegration}
+            subTitle="Integrations"
           />
           <Box padding="0.75rem 1rem" borderBottom="1px solid lightgray">
             Pricing
