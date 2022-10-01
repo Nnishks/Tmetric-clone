@@ -34,7 +34,7 @@ function AddBreak(prop:Proptype) {
     <Box p="15px 20px" borderRadius="5px"  boxShadow="0 0 0.25rem rgb(15 28 41 / 20%), 0 0.5rem 0.75rem rgb(15 28 41 / 20%);">
         <Text size="lg" fontWeight="semibold" mb="15px">Add Break</Text>
         <form onSubmit={(e)=>{prop.handleBreakSubmit(e,breakFormData)}}>
-        <Flex gap="20px" mb="20px">
+        <Flex gap="20px" mb="20px" flexWrap="wrap">
             <Box>
             <FormLabel fontSize="12px" mb="3px">Start Time</FormLabel>
             <InputGroup size="sm" >
