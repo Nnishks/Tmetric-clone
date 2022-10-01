@@ -18,7 +18,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 
 
 function TaskNav() {
-    console.log(styles)
+  
     return (
         <Box className={styles.taskNavCont} fontSize={{base:"10px",sm:"15px",md:"20px",lg:"20px",xl:"20px"}}   >
        <Text>My Tasks</Text>

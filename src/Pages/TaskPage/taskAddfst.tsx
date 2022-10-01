@@ -10,13 +10,64 @@ import {
   Text,
   Input,
 } from "@chakra-ui/react";
-import {useState} from "react"
+import { v4 } from "uuid";
+import { useEffect, useState } from "react";
+import { RiBarChartFill } from "react-icons/ri";
+type prop = {
+  add: boolean;
+  setAdd?: Function;
+};
 
-let data=["wrfhwirfweifw 1","wrfhwirfweifw 2","wrfhwirfweifw 3","wrfhwirfweifw 4","wrfhwirfweifw 5",]
-export default function FstAdd() {
-  const[play,setPlay]=useState(false)
-  const[markComplete,setMarkComplete]=useState(false)
-  console.log(play)
+
+export default function FstAdd({ add }: prop) {
+  // let data:any=JSON.parse(localStorage.getItem("taskData")||"")
+
+
+
+  const [taskData, setTaskData] = useState<any>([]);
+  const [taskText, setTaskText] = useState({
+    id: v4(),
+    task: "",
+    isCompleted: false,
+  });
+  const [play, setPlay] = useState(false);
+  // const [markComplete, setMarkComplete] = useState(false);
+  const [selectedData, setSelectedData] = useState({
+    id: "",
+    task: "",
+    isCompleted: false,
+  });
+  const[activityData,setActivityData]=useState<any>([])
+  const handleAdd = () => {
+    setTaskData([...taskData, taskText]);
+    localStorage.setItem("taskData", JSON.stringify(taskData));
+  };
+
+  const handleIsCompleted = (id: any) => {
+    let newData = taskData.map((ele: any) =>
+      ele.id == id ? { ...ele, isCompleted: !ele.isCompleted } : ele
+    );
+    setTaskData([...newData]);
+    console.log(id);
+  };
+  // const handleMarkasCompleted=(id : any)=>{
+  //   let newData = taskData.map((ele: any) =>
+  //     ele.id == id ? { ...ele, isCompleted: !ele.isCompleted } : ele
+  //   );
+  //   setTaskData([...newData]);
+  //   console.log(newData)
+  // }
+const handlePlay=()=>{
+ setPlay(!play)
+ let d=new Date()
+ setActivityData([...activityData,d])
+ console.log(activityData)
+
+}
+
+useEffect(()=>{
+
+},[taskData])
   return (
     <div>
       <Flex>
@@ -26,20 +77,48 @@ export default function FstAdd() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>No project</b>
+                    <b>
+                      {taskData.length == 0
+                        ? "No Project"
+                        : `Totel Project is : ${taskData.length}`}
+                    </b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-               {
-
-                data.map((ele)=><Box borderTop={'1px solid gray'} >
-<Text>{ele}</Text> 
-
-                </Box>)
-
-               }
+                {taskData.map((ele: any) => (
+                  <Box
+                    display={"flex"}
+                    alignItems="center"
+                    gap="5%"
+                    onClick={() => setSelectedData(ele)}
+                    key={ele.id}
+                    borderTop={"1px solid gray"}
+                  >
+                    <i
+                      onClick={() => handleIsCompleted(ele.id)}
+                      style={{ color: "#17c22e",border:"1px solid #17c22e",borderRadius:"50%" }}
+                      className="fa-solid fa-check"
+                    ></i>
+                    <Text>{ele.task}</Text>
+                  </Box>
+                ))}
+                {add ? (
+                  <Input
+                    onChange={(e) =>
+                      setTaskText({
+                        ...taskText,
+                        task: e.target.value,
+                        id: v4(),
+                      })
+                    }
+                    placeholder="write task name"
+                  />
+                ) : (
+                  "null"
+                )}
+                <Button onClick={handleAdd}>Add</Button>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
@@ -67,18 +146,19 @@ export default function FstAdd() {
               }}
             >
               <i
-              onClick={()=>setPlay(!play)}
-                style={{ color:play? "red":"green" }}
-                className= {play?"fa-solid fa-circle-pause":"fa-solid fa-circle-play"} 
+                onClick={handlePlay}
+                style={{ color: play ? "red" : "#17c22e" }}
+                className={
+                  play ? "fa-solid fa-circle-pause" : "fa-solid fa-circle-play"
+                }
               ></i>
               <Button
-              
-            onClick={()=>setMarkComplete(!markComplete)}
-              bg={markComplete?"green":undefined}
-              color={markComplete?"white":undefined}
-              _hover={{
-                backgroundColor:"none"
-              }}
+               
+                bg={selectedData.isCompleted ? "#17c22e" : undefined}
+                color={selectedData.isCompleted ? "white" : undefined}
+                _hover={{
+                  backgroundColor: "none",
+                }}
                 h={"70%"}
                 fontSize={{
                   base: "8px",
@@ -87,10 +167,9 @@ export default function FstAdd() {
                   lg: "15px",
                   xl: "25px",
                 }}
-               
               >
                 {/* <i className="fa-solid fa-check"></i> */}
-               {markComplete?"Completed":"Mark Complete"} 
+                {selectedData.isCompleted ? "Completed" : "Not Complete"}
               </Button>
             </Flex>
 
@@ -117,19 +196,22 @@ export default function FstAdd() {
           <br />
           {/* //////////////////////////////////////////////// */}
           {/* task name */}
-          <Text fontSize={"2xl"}>task name</Text>
+          <Text color={"gray"} fontSize={"4xl"}>
+            {selectedData.task ? selectedData.task : "Selected task"}
+           
+          </Text>
           <br />
-          <Flex justifyContent="space-between" w={"40%"}>
+          <Flex justifyContent="space-between" borderBottom={'1px solid gray'} pb='1%' w={"40%"}>
             <Text>Project</Text>
             <Text>Project name</Text>
           </Flex>
           <br />
-          <Flex justifyContent="space-between" w={"40%"}>
+          <Flex justifyContent="space-between" w={"40%"} borderBottom={'1px solid gray'} pb='1%'>
             <Text>Assignee</Text>
-            <Text>SK ISMILE</Text>
+            <Text>User</Text>
           </Flex>
           <br />
-          <Flex justifyContent="space-between" w="40%">
+          <Flex justifyContent="space-between" w="40%" borderBottom={'1px solid gray'} pb='1%'>
             <Text>Due Date</Text>
             <Input w={"50px"} type={"date"} />
           </Flex>
@@ -138,13 +220,24 @@ export default function FstAdd() {
             <Input placeholder="task descreption" />
           </Box>
           <br />
-          <Flex justifyContent="space-between" w="40%">
+          <Flex justifyContent="space-between" w="40%" borderBottom={'1px solid gray'} pb='1%'>
             <Text>Estimate</Text>
             <Text> None</Text>
           </Flex>
           <br />
+
+{/* //activity */}
+{/* <Box>
+      <RiBarChartFill/>
+      {activityData.map((ele:any,i:any)=><Box key={i} >
+<Text>{ele}</Text>
+      </Box> )}
+      </Box> */}
+
         </Box>
       </Flex>
+
+      
     </div>
   );
 }

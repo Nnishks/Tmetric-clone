@@ -5,7 +5,14 @@ import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { ChevronDownIcon, SmallAddIcon } from "@chakra-ui/icons";
 import EmptyTask from "./emptyTask";
 import FstAdd from "./taskAddfst";
-function TaskMain() {
+
+type prop={
+  add:boolean,
+  setAdd:Function
+}
+
+
+function TaskMain({add,setAdd}:prop) {
   // const [isEmpty,setIsEmpty]=useState()
   return (
     <div className={styles.taskMainCont}>
@@ -42,6 +49,7 @@ function TaskMain() {
               bg={"#3070f0"}
               color="white"
               as={Button}
+              onClick={()=>setAdd(!add)}
             >
               <SmallAddIcon />
               New Task
@@ -94,7 +102,7 @@ function TaskMain() {
       </Flex>
 
       {/* ///////////////////////inside */}
-      {false ? <EmptyTask /> : <FstAdd />}
+      {!add ? <EmptyTask /> : <FstAdd add={add} />}
     </div>
   );
 }
