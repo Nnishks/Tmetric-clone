@@ -65,7 +65,7 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
 
 
   return (
-    <Box border="1px solid red" p="15px 20px" borderRadius="5px">
+    <Box p="15px 20px" borderRadius="5px" boxShadow="0 0 0.25rem rgb(15 28 41 / 20%), 0 0.5rem 0.75rem rgb(15 28 41 / 20%);">
         <form onSubmit={(e)=>{prop.handleSubmit(e,timeFormData)
        setTimeFormData(initState) }}>
             <Flex justifyContent="space-between" mb="20px" flexWrap="wrap">
