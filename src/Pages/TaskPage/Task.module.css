@@ -1,48 +1,45 @@
-
-.taskCont{
-    width: 80%;
-    margin: auto;
-    /* border: 1px solid red; */
-   
+.taskCont {
+  width: 80%;
+  margin: auto;
+  /* border: 1px solid red; */
 }
-.emptyTask{
-    width: 100%;
-    height: 50%;
-    /* background-image: url();
+.emptyTask {
+  width: 100%;
+  height: 50%;
+
+  /* background-image: url();
     background-repeat: no-repeat; */
-    /* background-position: center; */
-    /* background-size: 20%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+  /* background-position: center; */
+  /* background-size: 20%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.emptyTask img{
-width: 20%;
-
+.emptyTask img {
+  width: 20%;
 }
-
 
 /* ///////////////////fst nav start  */
 
-.taskNavCont{
-border: 1px solid black;
-display: flex;
-gap: 5%;
-align-items: center;
-
+.taskNavCont {
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 5%;
+  align-items: center;
 }
-
 
 /* ///////filter nav */
-.taskFilterNav{
-border: 1px solid black;
-display: flex;
-/* gap: 5px; */
-/* margin-top: 2%; */
+.taskFilterNav {
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 2%;
+  height: 50px;
+  align-items: center;
+  /* margin-top: 2%; */
 }
-.taskMainCont{
-    /* border: 1px solid red; */
-    margin-top: 2%;
-    height: 1000px;
+.taskMainCont {
+  border: 1px solid black;
+  margin-top: 2%;
+  height: 700px;
 }
