@@ -6,8 +6,9 @@ import { ImCross } from "react-icons/im";
 
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar/Navbar";
 const data = [
   {
     title: "Time tracking",
