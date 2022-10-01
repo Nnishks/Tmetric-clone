@@ -22,9 +22,9 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  if (token) {
-    navigate("/");
-  }
+  // if (token) {
+  //   navigate("/");
+  // }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
