@@ -2,15 +2,17 @@ import {
   USER_LOGIN_ERROR,
   USER_LOGIN_LOADING,
   USER_LOGIN_SUCCESSFULL,
+  USER_LOGOUT_SUCESS,
   USER_SIGNUP_ERROR,
   USER_SIGNUP_LOADING,
   USER_SIGNUP_SUCCESSFULL,
 } from "./user.types";
 
+let token = localStorage.getItem("token") || "";
 const initState = {
   loading: false,
   error: false,
-  token: "",
+  token: token,
 };
 
 export const authReducer = (state = initState, { type, payload }) => {
@@ -51,11 +53,21 @@ export const authReducer = (state = initState, { type, payload }) => {
       };
     }
     case USER_LOGIN_SUCCESSFULL: {
+      localStorage.setItem("token", payload.token.token);
       return {
         ...state,
         loading: false,
         error: true,
-        token: payload,
+        token: payload.token.token,
+      };
+    }
+    case USER_LOGOUT_SUCESS: {
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        token: "",
       };
     }
     default: {
