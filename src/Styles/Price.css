@@ -1,0 +1,238 @@
+.price-header {
+    background-color: #e8edff;
+    text-align: center;
+    overflow: hidden;
+    color: #292e33;
+    height: 376px;
+}
+
+.toggler {
+    width: 90%;
+    border: 1px solid rgba(62, 62, 62, 0.67);
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/** FF*/
+
+
+.price-header>h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+    margin-top: 7%;
+}
+
+.price-header>p {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.B-part {
+    height: fit-content;
+    width: 33.33%;
+    height: 750px;
+    border: 1px solid #a1a7b7;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.B-part> :nth-child(2)>a {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.B-part>h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.carddiv {
+    height: fit-content;
+    display: flex;
+    width: 90%;
+    gap: 5%;
+    margin: auto;
+    /* border:1px solid red; */
+    overflow: hidden;
+    
+}
+
+.feature-item {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 50px;
+    /* border:2px solid red */
+}
+
+.feature-2 {
+    margin-top: 10px;
+    color: #a3a9b4;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.btn2 {
+    margin-top: 20px;
+    width: 30%;
+    margin-left: 35%;
+    display: flex;
+}
+
+.tchange {
+    padding: 20px 16px 12px;
+    margin: auto;
+    border-radius: 10px;
+    width: 288px;
+    background-color: #e8ebf5;
+}
+
+.TickIcon {
+    font-size: 20px;
+    color: green;
+    margin-right: 10px;
+}
+
+.cros {
+    font-size: 10px;
+    color: #a3a9b4;
+    margin-right: 12px;
+}
+
+.btn1 {
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3070f0;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.btn1:hover {
+    background-color: #0257ff;
+}
+
+.l-div {
+    width: 100%;
+    height: 245px;
+    background-image: url(https://tmetric.com/media/shvmqkff/colored-banner-image.png);
+    background-position: center;
+    display: grid;
+    place-content: center;
+}
+
+input[type=range] {
+    height: 37px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 340px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 340px;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #306FEF;
+    border-radius: 17px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 7px #C9C9C9;
+    border: 3px solid #000000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -10px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #306FEF;
+}
+
+input[type=range]::-moz-range-track {
+    width: 340px;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #306FEF;
+    border-radius: 17px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 7px #C9C9C9;
+    border: 0px solid #000000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 340px;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #306FEF;
+    border: 0px solid #000000;
+    border-radius: 34px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #306FEF;
+    border: 0px solid #000000;
+    border-radius: 34px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 1px 1px 7px #C9C9C9;
+    border: 0px solid #000000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #306FEF;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #306FEF;
+}
+
+* {
+    text-decoration: none;
+    color: inherit
+}

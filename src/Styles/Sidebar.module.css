@@ -1,0 +1,74 @@
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    background-color:#f6f7f8;
+    left: 0;
+    transition: left 0.5s ease;
+  }
+  .toggler {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0.9375rem;
+    left: 12px;
+    height: 2.25rem;
+    width: 2.25rem;
+    padding: 0.5rem;
+    border: 1px solid #e2e6eb;
+    outline: none;
+    transition: background-color 0.35s ease;
+    box-shadow: none;
+    z-index: 5;
+    cursor: pointer;
+    border: 1px solid #e2e6eb;
+    box-shadow: 0px 0px 2px rgb(10 31 51 / 20%), 0px 8px 12px rgb(10 31 51 / 4%);
+    background-color: #fff;
+  }
+  .selecteddiv{
+    padding: 6px 16px;
+    background-color:#3070F01F;
+    display: flex;
+    color:#3070f0;
+    border-radius: 10px;
+    margin: 0px 12px;
+    align-items: center;
+  }
+  .selecteddiv >:nth-child(1){
+    margin: 0px 12px 0px 0px ;
+  }
+  .selecteddiv>span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .normaldiv {
+    padding: 6px 16px;
+    display: flex;
+    /* color: #3070f0; */
+    border-radius: 10px;
+    margin: 0px 12px;
+    align-items: center;
+  }
+  
+  .normaldiv>:nth-child(1) {
+    margin: 0px 12px 0px 0px;
+  }
+  
+  .normaldiv>span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .AMWdiv{
+      padding: 6px 16px;
+      font-weight:500;
+      border-radius: 10px;
+      margin: 0px 12px;
+      align-items: center;
+  }
+  .droop{
+    background-color: #fff;
+  }

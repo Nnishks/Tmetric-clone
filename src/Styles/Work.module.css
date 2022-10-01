@@ -162,3 +162,35 @@
     /* margin-top: 7px; */
     font-size: 24px;
 }
+@media all and (min-width: 100px) and (max-width: 1150px) {
+   /* .taskmaindiv{
+    background-color: red;
+    
+   } */
+   .tasktopcard{
+    display: flex;
+    flex-direction: column;
+    margin-left:30px;
+    padding-right: 30px;
+   }
+   .topchild1{
+    min-width: 400px;
+
+   }
+   .topchild2cover{
+    min-width: 400px;
+    margin-left:-2px;
+   }
+   .secflexdiv{
+    font-size: auto;
+    margin-left: -4px;
+   }
+   .taskdowncard{
+    display: flex;
+    flex-direction: column;
+    margin-left:30px;
+   }
+   .downchild1{
+    min-width: 400px;
+   }
+  }
