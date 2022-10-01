@@ -6,15 +6,40 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  Heading,
   Img,
   Input,
-  Spacer,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { loginAction } from "../ReduxComponents/User/user.action";
 
 const Login = () => {
+  const [user, setUser] = useState([]);
+  const token = useSelector((store) => store.auth.token);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  if (token) {
+    navigate("/");
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+    dispatch(loginAction(user));
+  };
+
   return (
     <>
       <Flex
@@ -28,13 +53,8 @@ const Login = () => {
           <Center marginTop="14">
             <Img src="https://id.tmetric.com/images/tmetric_logo_and_text.svg" />
           </Center>
-          <Box>
-            <Text
-              fontSize="24px"
-              fontWeight="500"
-              marginTop="6"
-              marginBottom="6"
-            >
+          <Box textAlign="center">
+            <Text fontSize="24px" fontWeight="500" margin="1rem auto">
               Log into TMetric
             </Text>
           </Box>
@@ -48,11 +68,20 @@ const Login = () => {
               placeholder="jhonsmith@mail.com"
               size="sm"
               marginBottom="4"
+              name="email"
+              type="email"
+              onChange={handleChange}
             />
             <FormLabel fontSize="14px" color="#857e88">
               Password
             </FormLabel>
-            <Input placeholder="Enter your password" size="sm" />
+            <Input
+              placeholder="Enter your password"
+              size="sm"
+              name="password"
+              type="password"
+              onChange={handleChange}
+            />
             <Button
               bg="#3070f0"
               color="white"
@@ -60,6 +89,8 @@ const Login = () => {
               size="sm"
               marginTop="6"
               _hover={{ bg: "#3070f0" }}
+              type={"submit"}
+              onClick={handleSubmit}
             >
               Log In
             </Button>
@@ -134,14 +165,13 @@ const Login = () => {
           <Text fontSize="14px" fontWeight="600">
             Can't Log in?
           </Text>
-          <Text fontSize="14px" fontWeight="600">
-            Sign Up
-          </Text>
+          <Link to="/signup">
+            <Text fontSize="14px" fontWeight="600">
+              Sign Up
+            </Text>
+          </Link>
         </Flex>
       </Flex>
-      <Text fontSize="14px" color="#3070f0" fontWeight="600">
-        Privacy Policy
-      </Text>
     </>
   );
 };
