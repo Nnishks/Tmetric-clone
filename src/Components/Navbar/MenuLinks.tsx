@@ -5,6 +5,7 @@ import {
   Icon,
   SimpleGrid,
   useDisclosure,
+  Link,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -230,15 +231,15 @@ export default function MenuLinks() {
         </Flex>
       </Box>
 
-      <NavLink to="#1">
+      <Link _hover={{ color: "blue" }} href="#1">
         <Text>Pricing</Text>
-      </NavLink>
-      <NavLink to="#2">
+      </Link>
+      <Link _hover={{ color: "blue" }} href="#2">
         <Text>Support</Text>
-      </NavLink>
-      <NavLink to="#3">
+      </Link>
+      <Link _hover={{ color: "blue" }} href="#3">
         <Text>Blog</Text>
-      </NavLink>
+      </Link>
     </Flex>
   );
 }

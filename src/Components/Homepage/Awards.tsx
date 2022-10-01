@@ -1,5 +1,4 @@
-import { Box, Image, SimpleGrid } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Image, Link, SimpleGrid } from "@chakra-ui/react";
 
 export default function Awards() {
   const awards = [
@@ -50,13 +49,13 @@ export default function Awards() {
       textAlign="center"
     >
       {awards.map((item) => (
-        <NavLink to={item.url} key={item.id}>
+        <Link href={item.url} key={item.id}>
           <Image
             margin="auto"
             w={{ base: "4rem", xl: "7rem", lg: "6rem", md: "5rem" }}
             src={item.img_url}
           />
-        </NavLink>
+        </Link>
       ))}
     </SimpleGrid>
   );

@@ -7,9 +7,15 @@ import { Box, Text, Flex, Image } from "@chakra-ui/react";
 //   img_url: string;
 // };
 
-export default function SubmenuItem({ title, desc, toggler, img_url }: any) {
+export default function SubmenuItem({
+  title,
+  desc,
+  toggler,
+  img_url,
+  url,
+}: any) {
   return (
-    <a href="#">
+    <a href={url}>
       <Flex onClick={() => toggler()} gap="1rem">
         <Box>
           <Image w="30px" src={img_url} />
