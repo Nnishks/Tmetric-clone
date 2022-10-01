@@ -1,25 +1,27 @@
-import { Box, Text, Icon, Flex } from "@chakra-ui/react";
-import { BsFillStopwatchFill } from "react-icons/bs";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
 
-type SubmenuItemProps = {
-  title: string;
-  desc: string;
-  toggler: Function;
-};
+// type SubmenuItemProps = {
+//   title: string;
+//   desc: string;
+//   toggler: Function;
+//   img_url: string;
+// };
 
 export default function SubmenuItem({
   title,
   desc,
   toggler,
-}: SubmenuItemProps) {
+  img_url,
+  url,
+}: any) {
   return (
-    <a href="#">
+    <a href={url}>
       <Flex onClick={() => toggler()} gap="1rem">
         <Box>
-          <Icon boxSize="2rem" color="#777E85" as={BsFillStopwatchFill} />
+          <Image w="30px" src={img_url} />
         </Box>
         <Box _hover={{ color: "blue" }}>
-          <Text mb="0.5rem" transition="0.2s all ease-in">
+          <Text mb="0.5rem" fontWeight="medium" transition="0.2s all ease-in">
             {title}
           </Text>
           <Text

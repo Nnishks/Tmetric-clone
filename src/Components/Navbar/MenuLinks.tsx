@@ -5,25 +5,31 @@ import {
   Icon,
   SimpleGrid,
   useDisclosure,
+  Link,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import SubmenuItem from "./SubmenuItem";
 import menuItems from "./menuItems.json";
+import { NavLink } from "react-router-dom";
 
 export default function MenuLinks() {
   const { isOpen, onToggle } = useDisclosure();
   const { isOpen: isOpen2, onToggle: onToggle2 } = useDisclosure();
 
+  console.log(menuItems.tmetric[0].img_url);
+
   return (
     <Flex
       justifyContent="space-between"
-      fontWeight="medium"
+      fontWeight="normal"
       alignItems="center"
       gap="3rem"
     >
       <Flex
         cursor="pointer"
+        _hover={{ color: "blue" }}
+        color={isOpen ? "blue" : ""}
         onClick={() => {
           onToggle();
           if (isOpen2 === true) onToggle2();
@@ -59,9 +65,11 @@ export default function MenuLinks() {
             >
               Overview
             </Text>
-            <a href="#">
+            <NavLink to="/">
               <Box onClick={onToggle}>
-                <Text mb="0.5rem">Industry</Text>
+                <Text mb="0.5rem" fontWeight="medium">
+                  Industry
+                </Text>
                 <Text
                   color="#4C5157"
                   fontWeight="medium"
@@ -71,10 +79,12 @@ export default function MenuLinks() {
                   Made for all industries. Check benefits of usage
                 </Text>
               </Box>
-            </a>
-            <a href="#">
+            </NavLink>
+            <NavLink to="#">
               <Box onClick={onToggle}>
-                <Text mb="0.5rem">Customers</Text>
+                <Text mb="0.5rem" fontWeight="medium">
+                  Customers
+                </Text>
                 <Text
                   color="#4C5157"
                   fontWeight="medium"
@@ -85,13 +95,13 @@ export default function MenuLinks() {
                   management
                 </Text>
               </Box>
-            </a>
+            </NavLink>
           </Box>
 
           <Box>
             <Text
               fontWeight="medium"
-              fontSize="1.3rem"
+              fontSize="1.1rem"
               color="#A4B4CB"
               mb="0.5rem"
             >
@@ -108,6 +118,8 @@ export default function MenuLinks() {
 
       <Flex
         cursor="pointer"
+        _hover={{ color: "blue" }}
+        color={isOpen2 ? "blue" : ""}
         onClick={() => {
           onToggle2();
           if (isOpen === true) onToggle();
@@ -142,9 +154,11 @@ export default function MenuLinks() {
             >
               Apps
             </Text>
-            <a href="#">
+            <NavLink to="#">
               <Box onClick={onToggle2}>
-                <Text mb="0.5rem">Browser Extensions</Text>
+                <Text mb="0.5rem" fontWeight="medium">
+                  Browser Extensions
+                </Text>
                 <Text
                   color="#4C5157"
                   fontWeight="medium"
@@ -155,10 +169,12 @@ export default function MenuLinks() {
                   productive
                 </Text>
               </Box>
-            </a>
-            <a href="#">
+            </NavLink>
+            <NavLink to="#">
               <Box onClick={onToggle2}>
-                <Text mb="0.5rem">Mobile apps</Text>
+                <Text mb="0.5rem" fontWeight="medium">
+                  Mobile apps
+                </Text>
                 <Text
                   color="#4C5157"
                   fontWeight="medium"
@@ -169,10 +185,12 @@ export default function MenuLinks() {
                   and iOS platforms are supported.
                 </Text>
               </Box>
-            </a>
-            <a href="#">
+            </NavLink>
+            <NavLink to="#">
               <Box onClick={onToggle2}>
-                <Text mb="0.5rem">Desktop apps</Text>
+                <Text mb="0.5rem" fontWeight="medium">
+                  Desktop apps
+                </Text>
                 <Text
                   color="#4C5157"
                   fontWeight="medium"
@@ -182,7 +200,7 @@ export default function MenuLinks() {
                   Download TMetric app for your desktop computer or a laptop
                 </Text>
               </Box>
-            </a>
+            </NavLink>
           </Box>
 
           <Box>
@@ -213,15 +231,15 @@ export default function MenuLinks() {
         </Flex>
       </Box>
 
-      <a href="#">
+      <Link _hover={{ color: "blue" }} href="#1">
         <Text>Pricing</Text>
-      </a>
-      <a href="#">
+      </Link>
+      <Link _hover={{ color: "blue" }} href="#2">
         <Text>Support</Text>
-      </a>
-      <a href="#">
+      </Link>
+      <Link _hover={{ color: "blue" }} href="#3">
         <Text>Blog</Text>
-      </a>
+      </Link>
     </Flex>
   );
 }

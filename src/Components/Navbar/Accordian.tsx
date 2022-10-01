@@ -5,6 +5,8 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Flex,
+  Image,
   Text,
 } from "@chakra-ui/react";
 
@@ -12,7 +14,7 @@ import {
 //   menuTitle: string;
 // };
 
-export default function Accordian({ menuTitle, menuItems }: any) {
+export default function Accordian({ menuTitle, menuItems, subTitle }: any) {
   return (
     <Accordion allowToggle>
       <AccordionItem>
@@ -26,12 +28,13 @@ export default function Accordian({ menuTitle, menuItems }: any) {
         </h2>
         <AccordionPanel pb={4}>
           <Text color="gray" m="0.5rem 0">
-            Heading2
+            {subTitle}
           </Text>
           {menuItems.map((item: any) => (
-            <Box margin="1rem 0" key={item.id}>
+            <Flex alignItems="center" margin="1rem 0" key={item.id} gap="1rem">
+              <Image w="1.5rem" src={item.img_url} />
               {item.title}
-            </Box>
+            </Flex>
           ))}
         </AccordionPanel>
       </AccordionItem>
