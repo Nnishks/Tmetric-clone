@@ -12,13 +12,8 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { signupAction } from "../ReduxComponents/User/user.action";
-
-// type init = {
-//   name: string,
-//   email: string,
-//   password: number,
-// };
 
 const SignUp = () => {
   const [user, setUser] = useState({});
@@ -40,20 +35,6 @@ const SignUp = () => {
     dispatch(signupAction(user));
     console.log(user);
   };
-
-  // let postData = async () => {
-  //   await axios
-  //     .post("http://localhost:8080/user/signup", { ...user })
-  //     .then((res) => {
-  //       console.log("res is ", res);
-  //     });
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(user);
-  //   postData();
-  // };
 
   return (
     <>
@@ -197,7 +178,9 @@ const SignUp = () => {
           >
             <Text fontSize="14px" fontWeight="600">
               Already have an account ?{" "}
-              <span style={{ color: "#3070f0" }}>Log In</span>
+              <Link to="/login" >
+                <span style={{ color: "#3070f0" }}>Log In</span>
+              </Link>
             </Text>
           </Flex>
         </Flex>

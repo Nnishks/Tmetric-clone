@@ -12,23 +12,19 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { loginAction } from "../ReduxComponents/User/user.action";
 
 const Login = () => {
   const [user, setUser] = useState([]);
+  const token = useSelector((store) => store.auth.token);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const getData = async () => {
-    try {
-      let response = await axios.get("http://localhost:8080/user");
-      console.log(response);
-    } catch (err) {}
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  if (token) {
+    navigate("/");
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,11 +34,11 @@ const Login = () => {
     });
   };
 
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
     dispatch(loginAction(user));
-  }
+  };
 
   return (
     <>
@@ -57,13 +53,8 @@ const Login = () => {
           <Center marginTop="14">
             <Img src="https://id.tmetric.com/images/tmetric_logo_and_text.svg" />
           </Center>
-          <Box>
-            <Text
-              fontSize="24px"
-              fontWeight="500"
-              marginTop="6"
-              marginBottom="6"
-            >
+          <Box textAlign="center">
+            <Text fontSize="24px" fontWeight="500" margin="1rem auto">
               Log into TMetric
             </Text>
           </Box>
@@ -174,14 +165,13 @@ const Login = () => {
           <Text fontSize="14px" fontWeight="600">
             Can't Log in?
           </Text>
-          <Text fontSize="14px" fontWeight="600">
-            Sign Up
-          </Text>
+          <Link to="/signup">
+            <Text fontSize="14px" fontWeight="600">
+              Sign Up
+            </Text>
+          </Link>
         </Flex>
       </Flex>
-      <Text fontSize="14px" color="#3070f0" fontWeight="600">
-        Privacy Policy
-      </Text>
     </>
   );
 };

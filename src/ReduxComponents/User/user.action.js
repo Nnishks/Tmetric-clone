@@ -30,16 +30,17 @@ export const signupAction = (creds) => async (dispatch) => {
 export const loginAction = (creds) => async (dispatch) => {
   dispatch({ type: USER_LOGIN_LOADING });
   try {
-    let response = await axios.post("http://localhost:8080/user/login", creds)
-    console.log("login response is", response)
+    let response = await axios.post("http://localhost:8080/user/login", creds);
+    console.log("login response is", response);
     dispatch({
       type: USER_LOGIN_SUCCESSFULL,
-      payload:response
-    })
+      payload: response.data,
+    });
   } catch (err) {
-    console.log(err);
+    console.log("err is ", err.response.data.error_messege);
     dispatch({
       type: USER_LOGIN_ERROR,
+      payload: err.response.data.error_messege,
     });
   }
 };
