@@ -26,7 +26,7 @@ const getUserFromLocalStorage = () => {
       return null;
   }
 }
-
+ 
 export default function FstAdd({ add }: prop) {
   let data:any=getUserFromLocalStorage()
 
