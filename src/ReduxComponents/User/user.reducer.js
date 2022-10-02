@@ -13,6 +13,7 @@ const initState = {
   loading: false,
   error: false,
   token: token,
+  isAuth: false
 };
 
 export const authReducer = (state = initState, { type, payload }) => {
@@ -53,12 +54,15 @@ export const authReducer = (state = initState, { type, payload }) => {
       };
     }
     case USER_LOGIN_SUCCESSFULL: {
-      localStorage.setItem("token", payload.token.token);
+      // console.log(payload)
+      localStorage.setItem("token", payload.token);
+      console.log("working")
       return {
         ...state,
         loading: false,
-        error: true,
-        token: payload.token.token,
+        error: false,
+        // token: payload.token.token,
+        isAuth:true
       };
     }
     case USER_LOGOUT_SUCESS: {
@@ -68,6 +72,7 @@ export const authReducer = (state = initState, { type, payload }) => {
         loading: false,
         error: false,
         token: "",
+        isAuth:false
       };
     }
     default: {

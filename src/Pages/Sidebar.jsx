@@ -6,7 +6,9 @@ import { BsChevronRight } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutAction } from "../ReduxComponents/User/user.action";
-import { Navigate, useNavigate } from "react-router-dom";
+
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -129,14 +131,18 @@ const SideBar = () => {
                     : "https://tmetric.com/media/qojb5snq/icon-timer-gray.svg"
                 }
               />
-              <span>Time</span>
+
+              <Link to="/Time"><span>Time</span></Link>
+
             </div>
             <div
               className={task ? styles.selecteddiv : styles.normaldiv}
               onClick={() => sBar("task")}
             >
               <BiTask style={{ fontSize: "25px" }} />
-              <span>Tasks</span>
+
+              <Link to="/task"><span>Task</span></Link>
+
             </div>
             <hr></hr>
             <div
@@ -144,7 +150,9 @@ const SideBar = () => {
               onClick={() => sBar("My work")}
             >
               <BiTask style={{ fontSize: "25px" }} />
-              <span>My Work</span>
+
+              <Link to="/work"><span>My work</span></Link>
+
             </div>
             <hr></hr>
           </div>

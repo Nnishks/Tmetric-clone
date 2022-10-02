@@ -18,13 +18,15 @@ import { loginAction } from "../ReduxComponents/User/user.action";
 
 const Login = () => {
   const [user, setUser] = useState([]);
-  const token = useSelector((store) => store.auth.token);
+  const {isAuth, token} = useSelector((store) => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
 
   if (token) {
     navigate("/Time");
   }
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +42,17 @@ const Login = () => {
     dispatch(loginAction(user));
   };
 
+  // console.log("dfkk" + isAuth)
+  // console.log(token)
+
+  useEffect(()=>{
+    console.log(12334)
+    console.log(isAuth)
+
+    if (isAuth) {
+      navigate("/Time");
+    }
+  },[isAuth])
   return (
     <>
       <Flex

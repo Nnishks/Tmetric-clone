@@ -10,14 +10,16 @@ import React, {useState} from 'react'
 import GetCalender from './Calendar'
 import Timeline from './Timeline'
 import WorkTimeEntry from './WorkTimeEntry'
-import Listing from './TimeListing'
+import SideBar from '../Sidebar'
+
 
 const Time = () => {
   const [state, setState]=useState<boolean>(false)
   const [isNotMidScreen]=useMediaQuery(`(min-width:1050px)`)
     
   return (
-    <Box border="1px solid black">
+    <Box>
+      <SideBar/>
     <Flex  m={isNotMidScreen?"10px 14rem": "10px 1rem"} p="10px" justifyContent="space-between" fontSize="lg" align="center">
       <Flex align="center">
         {state? <Icon as={IoMdAddCircle} color="teal" fontSize="40px" onClick={()=>{setState(false)}}/>:<Icon as={AiFillPlayCircle} color="teal" fontSize="40px" onClick={()=>{setState(true)}}/>}
