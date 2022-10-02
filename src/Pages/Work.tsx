@@ -6,13 +6,16 @@ import { IoCaretForwardCircleSharp } from "react-icons/io5";
 import styles from '../Styles/Work.module.css';
 import { RiMenu2Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import SideBar from './Sidebar';
 
 const Mywork = () => {
   return (
     <div>
+      <SideBar />
       <div className={styles.pagetaskheading}>
         <div style={{display:"flex"}}>
-        <RiMenu2Line className={styles.listtaskh}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* <RiMenu2Line className={styles.listtaskh}/> */}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <h1 className={styles.pthu2} >My Work</h1>
         </div>
         <div>
@@ -24,6 +27,7 @@ const Mywork = () => {
         <BiNotepad />
         <BiTimeFive /> */}
         {/* Top card */}
+        <div  className={styles.taskmaindiv} >
         <div className={styles.tasktopcard}>
 
             <div className={styles.topchild1}>
@@ -86,7 +90,7 @@ const Mywork = () => {
               <div style={{paddingTop:"7px",color:"rgb(120, 118, 118)",fontStyle: "italic",
                  fontSize: "16px"}}>
                 
-               <Link><span style={{color:"rgb(9, 9, 174)"}}>&nbsp;&nbsp;Connect&nbsp;</span></Link>
+               <Link to=""><span style={{color:"rgb(9, 9, 174)"}}>&nbsp;&nbsp;Connect&nbsp;</span></Link>
                 <span>a calendar to track your events.</span>
 
               </div>
@@ -99,11 +103,12 @@ const Mywork = () => {
               </div>
               <div style={{paddingTop:"7px",color:"rgb(120, 118, 118)",fontStyle: "italic",
                  fontSize: "16px"}}>
-              <Link><span style={{color:"rgb(9, 9, 174)"}}>&nbsp;&nbsp;Create &nbsp;</span></Link> 
+              <Link to=""><span style={{color:"rgb(9, 9, 174)"}}>&nbsp;&nbsp;Create &nbsp;</span></Link> 
                 <span>a task and set due date.</span>
               </div>
             </div>
 
+        </div>
         </div>
     </div>
   )

@@ -23,7 +23,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   if (token) {
-    navigate("/");
+    navigate("/Time");
   }
 
   const handleChange = (e) => {

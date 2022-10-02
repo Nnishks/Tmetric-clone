@@ -2,7 +2,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import {BiTime} from "react-icons/bi"
 import {IoMdTime} from "react-icons/io"
 
-import { Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, InputRightAddon } from '@chakra-ui/react'
+import { Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, InputRightAddon, useMediaQuery } from '@chakra-ui/react'
 import React, {useState,useEffect} from 'react'
 
 type Proptype={
@@ -31,6 +31,8 @@ const initState:TimeType={
 function AddTimeEntry(prop:Proptype) {
   
     const [timeFormData, setTimeFormData]= useState<TimeType>(initState)
+    const [isNotMidScreen]=useMediaQuery(`(min-width:1050px)`)
+
 
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     const {name, value}=e.target
@@ -72,11 +74,11 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
             <Box>
             <FormLabel fontSize="12px" mb="3px">Description</FormLabel>
             <InputGroup size="sm" >
-            <Input type="text" name='description' value={timeFormData.description} borderColor="gray" onChange={handleChange} borderRadius="5px" placeholder='Describe your task' htmlSize={70} width="auto"></Input>
+            <Input type="text" name='description' value={timeFormData.description} borderColor="gray" onChange={handleChange} borderRadius="5px" placeholder='Describe your task' htmlSize={isNotMidScreen?70: 40} width="auto"></Input>
             <InputRightAddon children={<ChevronDownIcon />} />
             </InputGroup>
             </Box>
-            <Flex gap="20px">
+            <Flex gap="20px" flexWrap="wrap">
             <Box>
             <FormLabel fontSize="12px" mb="3px">Start Time</FormLabel>
             <InputGroup size="sm" >

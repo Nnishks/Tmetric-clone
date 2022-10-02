@@ -16,7 +16,8 @@ type PropsType={
 function TimeListing(prop:PropsType) {
   return (
     <Box  >
-    {prop.TimeStampList.map(item=><Box key={new Date().toDateString()+item.startTime}><Flex  p="15px 20px"  justifyContent="space-between">
+    {prop.TimeStampList.map(item=><Box key={new Date().toDateString()+item.startTime}>
+        <Flex  p="15px 20px"  justifyContent="space-between">
         <Flex gap="20px">
             <Checkbox></Checkbox>
             {item.description ? <Text>{item.description}</Text>:<Text>(No description)</Text>}

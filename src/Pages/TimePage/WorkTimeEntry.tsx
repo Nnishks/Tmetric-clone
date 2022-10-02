@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Checkbox, Flex } from '@chakra-ui/react'
+import { Box, Button, ButtonGroup, Checkbox, Flex, useMediaQuery } from '@chakra-ui/react'
 import React,{useState} from 'react'
 import AddBreak from './AddBreak'
 import AddTimeEntry from './AddTimeEntry'
@@ -35,6 +35,8 @@ function WorkTimeEntry() {
     const [showAddBreaky, setShowAddBreak]=useState<boolean>(false)
     const [TimeStampList, setTimeStampList]=useState<Array<TimeStampType>>(initTimeList)
     const [breakStampList, setBreakStampList]=useState<Array<BreakStamptype>>(initStampList)
+    const [isNotMidScreen]=useMediaQuery(`(min-width:1050px)`)
+
 
 
     const handleSubmit=(e:React.FormEvent<HTMLFormElement>, state:TimeStampType)=>{
@@ -61,7 +63,7 @@ function WorkTimeEntry() {
 
 
   return (
-    <Box border="1px solid gray"  m="10px 14rem" borderRadius="5px">
+    <Box border="1px solid gray"  m={isNotMidScreen?"10px 14rem": "10px 1rem"} borderRadius="5px">
         <Box p="15px 20px" >
             <Flex gap="20px" align="center">
             <Checkbox></Checkbox>
