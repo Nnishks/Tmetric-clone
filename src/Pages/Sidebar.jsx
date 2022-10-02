@@ -6,8 +6,10 @@ import { BsChevronRight } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutAction } from "../ReduxComponents/User/user.action";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
   const sidebarRef = useRef(null);
   const userName = useSelector((store) => store.auth.token.token);
   const dispatch = useDispatch();
@@ -51,8 +53,8 @@ const SideBar = () => {
 
   const handleLogOut = () => {
     console.log("logout function");
-    dispatch(signOutAction);
-    // need to add navigate to home page
+    dispatch(signOutAction());
+    navigate("/");
   };
 
   return (
