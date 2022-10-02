@@ -11,9 +11,14 @@ import SignUp from "./Pages/Login";
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
+      <AllRoutes />
+      {/* <Time/> */}
+=======
       <AllRoutes/>
       <SideBar/>
       {/* <SignUp/> */}
+>>>>>>> 4ce403a475ff0685baee52a9ebcf4d8525cae0dc
     </div>
   );
 }

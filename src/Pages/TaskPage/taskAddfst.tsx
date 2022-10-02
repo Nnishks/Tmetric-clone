@@ -19,12 +19,20 @@ type prop = {
 };
 
 
+const getUserFromLocalStorage = () => {
+  try {
+      return JSON.parse(localStorage.getItem("taskData")||"");
+  } catch (error) {
+      return null;
+  }
+}
+ 
 export default function FstAdd({ add }: prop) {
-  // let data:any=JSON.parse(localStorage.getItem("taskData")||"")
+  let data:any=getUserFromLocalStorage()
 
+console.log(data)
 
-
-  const [taskData, setTaskData] = useState<any>([]);
+  const [taskData, setTaskData] = useState<any>(data||[]);
   const [taskText, setTaskText] = useState({
     id: v4(),
     task: "",
@@ -39,15 +47,25 @@ export default function FstAdd({ add }: prop) {
   });
   const[activityData,setActivityData]=useState<any>([])
   const handleAdd = () => {
-    setTaskData([...taskData, taskText]);
-    localStorage.setItem("taskData", JSON.stringify(taskData));
+    if(taskText.task!=="")
+    {
+
+      setTaskData([...taskData, taskText]);
+      localStorage.setItem("taskData", JSON.stringify(taskData));
+      setTaskText({id: "",
+      task: "",
+      isCompleted: false,})
+    }
   };
 
   const handleIsCompleted = (id: any) => {
     let newData = taskData.map((ele: any) =>
       ele.id == id ? { ...ele, isCompleted: !ele.isCompleted } : ele
     );
-    setTaskData([...newData]);
+    
+
+      setTaskData([...newData]);
+ 
     console.log(id);
   };
   // const handleMarkasCompleted=(id : any)=>{
@@ -59,8 +77,11 @@ export default function FstAdd({ add }: prop) {
   // }
 const handlePlay=()=>{
  setPlay(!play)
- let d=new Date()
+ let d=new Date().toString()
+ if(selectedData.task!=="")
+    {
  setActivityData([...activityData,d])
+    }
  console.log(activityData)
 
 }
@@ -106,6 +127,7 @@ useEffect(()=>{
                 ))}
                 {add ? (
                   <Input
+                  value={taskText.task}
                     onChange={(e) =>
                       setTaskText({
                         ...taskText,
@@ -227,12 +249,15 @@ useEffect(()=>{
           <br />
 
 {/* //activity */}
-{/* <Box>
+<Box h={'150px'} >
       <RiBarChartFill/>
+      <Box h={'100%'} overflow={'scroll'}>
+
       {activityData.map((ele:any,i:any)=><Box key={i} >
-<Text>{ele}</Text>
-      </Box> )}
-      </Box> */}
+<Text>{"activity at "+ele}</Text> <br />
+      </Box>  )}
+      </Box>
+      </Box>
 
         </Box>
       </Flex>
