@@ -29,7 +29,7 @@ app.post("/login", async (req, res) => {
     }
 
     res.send({
-      token: `welcome! ${user.name}`,
+      token: `${user.name}`,
     });
     console.log("token is", token);
   } catch (err) {

@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, Flex, Menu, MenuButton, MenuList, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar'
 import "react-calendar/dist/Calendar.css";
 import { FaCalendarAlt } from "react-icons/fa"
 import { GoPrimitiveDot } from "react-icons/go"
@@ -36,7 +36,7 @@ function GetCalender(){
     </Flex>
   </MenuButton>
   <MenuList>
-  <Calendar onChange={onChange} value={value}  />
+  {/* <Calendar onChange={onChange} value={value}  /> */}
   </MenuList>
   </Menu>
   

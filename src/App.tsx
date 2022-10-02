@@ -1,22 +1,24 @@
 import "./App.css";
-// <<<<<<< HEAD
+import Navbar from "./Components/Navbar/Navbar";
 
-// import AllRoutes from "./Pages/AllRoutes";
-// =======
-// >>>>>>> fff0467cbf3d62061774c709bcb4dbdfbdae80c2
 
 import AllRoutes from "./Pages/AllRoutes";
-// import Time from "./Pages/TimePage/Time";
+import HomePage from "./Pages/HomePage";
+import Login from "./Pages/Login";
+import SideBar from "./Pages/Sidebar";
+import SignUp from "./Pages/Login";
 
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       <AllRoutes />
-{/* <<<<<<< HEAD */}
-       
-{/* ======= */}
       {/* <Time/> */}
-{/* >>>>>>> fff0467cbf3d62061774c709bcb4dbdfbdae80c2 */}
+=======
+      <AllRoutes/>
+      <SideBar/>
+      {/* <SignUp/> */}
+>>>>>>> 4ce403a475ff0685baee52a9ebcf4d8525cae0dc
     </div>
   );
 }

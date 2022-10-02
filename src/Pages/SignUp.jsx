@@ -44,8 +44,6 @@ const SignUp = () => {
   }, [token])
 
 
-  
-
   return (
     <>
       <Flex
