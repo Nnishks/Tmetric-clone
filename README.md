@@ -13,5 +13,5 @@ and the `npm run start` to run the app
 - [Govind](https://github.com/singh-govind)
 - [Sumangal](https://github.com/sumangaldey8972)
 - [Nishant](https://github.com/Nnishks)
-- [Smile](https://github.com/skismile)
+- [Ismile](https://github.com/skismile)
 - [Prashant](https://github.com/prashant3216)
