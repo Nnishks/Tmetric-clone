@@ -20,7 +20,7 @@ const Time = () => {
   return (
     <Box>
       <SideBar/>
-    <Flex  m={isNotMidScreen?"10px 14rem": "10px 1rem"} p="10px" justifyContent="space-between" fontSize="lg" align="center">
+    <Flex  m={isNotMidScreen?"10px 8rem": "10px 1rem"} p="10px" justifyContent="space-between" fontSize="lg" align="center">
       <Flex align="center">
         {state? <Icon as={IoMdAddCircle} color="teal" fontSize="40px" onClick={()=>{setState(false)}}/>:<Icon as={AiFillPlayCircle} color="teal" fontSize="40px" onClick={()=>{setState(true)}}/>}
       <Icon as={CgPlayStopO} color="red" fontSize="40px"/>

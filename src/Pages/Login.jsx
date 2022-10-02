@@ -23,11 +23,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
 
-  if (token) {
-    navigate("/Time");
-  }
-
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({

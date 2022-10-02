@@ -63,7 +63,7 @@ function WorkTimeEntry() {
 
 
   return (
-    <Box border="1px solid gray"  m={isNotMidScreen?"10px 14rem": "10px 1rem"} borderRadius="5px">
+    <Box border="1px solid gray"  m={isNotMidScreen?"10px 8rem": "10px 1rem"} borderRadius="5px">
         <Box p="15px 20px" >
             <Flex gap="20px" align="center">
             <Checkbox></Checkbox>

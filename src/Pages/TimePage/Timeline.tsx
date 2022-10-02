@@ -5,7 +5,7 @@ function Timeline() {
 
     const [isNotMidScreen]=useMediaQuery(`(min-width:1050px)`)
   return (
-        <Box border="1px solid gray"  m={isNotMidScreen?"10px 14rem": "10px 1rem"} p={isNotMidScreen?"20px 60px":"20px 20px"}  borderRadius="5px">
+        <Box border="1px solid gray"  m={isNotMidScreen?"10px 8rem": "10px 1rem"} p={isNotMidScreen?"20px 60px":"20px 20px"}  borderRadius="5px">
         <Flex justifyContent="space-between" mb="50px">
             <Box>
                 <Text  fontSize="md">Total</Text>

@@ -3,13 +3,14 @@ import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const RequiredAuth = ({ children }) => {
-  const token = useSelector((store) => store.auth.token.token);
+  const token = useSelector((store) => store.auth.token);
   const navigate = useNavigate();
-
-  if (token) {
-    return children;
+ 
+  if (!token) {
+    navigate("/login");
   }
-  navigate("/login");
+ 
+  return children;
 };
 
 export default RequiredAuth;

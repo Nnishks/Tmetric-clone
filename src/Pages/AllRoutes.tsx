@@ -20,10 +20,7 @@ const AllRoutes = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route
         path="/Time"
-        element={
-          <RequiredAuth>
-            <Time />
-          </RequiredAuth>
+        element={<RequiredAuth><Time /></RequiredAuth>
         }
       />
     </Routes>
