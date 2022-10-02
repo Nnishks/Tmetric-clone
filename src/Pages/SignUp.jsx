@@ -10,16 +10,17 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signupAction } from "../ReduxComponents/User/user.action";
 
 const SignUp = () => {
   const [user, setUser] = useState({});
-  const token = useSelector((store)=>store.auth.token);
-  console.log("token is", token)
+  const token = useSelector((store) => store.auth.token);
+  console.log("token is", token);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +36,15 @@ const SignUp = () => {
     dispatch(signupAction(user));
     console.log(user);
   };
+
+  useEffect(()=>{
+    if (token) {
+      navigate("/login");
+    }
+  }, [token])
+
+
+  
 
   return (
     <>
@@ -178,7 +188,7 @@ const SignUp = () => {
           >
             <Text fontSize="14px" fontWeight="600">
               Already have an account ?{" "}
-              <Link to="/login" >
+              <Link to="/login">
                 <span style={{ color: "#3070f0" }}>Log In</span>
               </Link>
             </Text>

@@ -231,9 +231,9 @@ export default function MenuLinks() {
         </Flex>
       </Box>
 
-      <Link _hover={{ color: "blue" }} href="#1">
+      <NavLink  to="/price">
         <Text>Pricing</Text>
-      </Link>
+      </NavLink>
       <Link _hover={{ color: "blue" }} href="#2">
         <Text>Support</Text>
       </Link>
