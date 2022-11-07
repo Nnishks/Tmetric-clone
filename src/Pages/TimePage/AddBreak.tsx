@@ -3,7 +3,7 @@ import { Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, InputRigh
 import React,{useState} from 'react'
 import {BiTime} from "react-icons/bi"
 import {IoMdTime} from "react-icons/io"
-
+// feedback: fw18_0112 - types can be moved to different module, it makes the component cleaner
 type Proptype={
     handleCancel:Function;
     handleBreakSubmit:Function;
