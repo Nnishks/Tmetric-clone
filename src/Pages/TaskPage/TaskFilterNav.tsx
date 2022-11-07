@@ -21,6 +21,7 @@ function TaskFilterNav() {
       mt="2%"
     >
       {/* class Name={styles.taskFilterNav} */}
+      /* feedback: fw18_0513 - I see the box UI has only different text, can we optimise it using loops or any other DS? */}
       <Box w={"15%"} h="100%">
         <Menu>
           <Button
