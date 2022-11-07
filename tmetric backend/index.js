@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, async () => {
   try {
+      // feedback: fw17_1126 - you can create this connection outside this function
     await connection;
     console.log("listing on http://localhost:8080");
   } catch (err) {
