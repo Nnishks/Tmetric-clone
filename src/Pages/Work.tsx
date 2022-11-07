@@ -15,6 +15,7 @@ const Mywork = () => {
       <div className={styles.pagetaskheading}>
         <div style={{display:"flex"}}>
         {/* <RiMenu2Line className={styles.listtaskh}/> */}
+          {/*feedback: fw17_1126 and fw19_0751 - Can we reduce the number of &nbsp? Check the feedback comment*/}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <h1 className={styles.pthu2} >My Work</h1>
         </div>
@@ -54,6 +55,7 @@ const Mywork = () => {
                 </div>
             </div>
                {/* 2nd flex div  */}
+            {/*feedback: fw17_1126 and fw19_0751 - Can we optimise it? There is only text that is dynamic here, you can use loops and pass this dynamic data*/}
                <div className={styles.secflexdiv}>
                  <div className={styles.gridtoptasksec}>
                   <p style={{color:"grey", fontStyle:"italic"}}>Today</p>
