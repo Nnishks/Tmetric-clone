@@ -49,6 +49,7 @@ app.post("/signup", async (req, res) => {
     let createdUser = await userModel.create(req.body);
     res.send({ userKey: createdUser });
   } catch (err) {
+    // feedback: fw17_1126 - Send meaningful response to the user, it should include what went wrong, anything missing, any errors on server and etc.
     res.status(500).send(err.messege);
   }
 });
