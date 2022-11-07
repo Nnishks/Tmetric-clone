@@ -7,11 +7,11 @@ import { ImCross } from "react-icons/im";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 
-
+// feedback: fw17_1126, fw19_0751, fw18_0112 - Please check the formatting in VScode
 
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
-
+// feedback: fw17_1126, fw19_0751, fw18_0112 - move this to constant or JSON files
 const data = [
   {
     title: "Time tracking",
@@ -72,6 +72,9 @@ const data = [
 const Price = () => {
   const [teamSize, setTeamSize] = useState(1);
 
+  // feedback: fw17_1126, fw19_0751, fw18_0112 - Can't we divide this component into smaller component?
+  // I see there is a lot of code that is re written and we can reuse it.
+  // You can create a wrapper and pass the configuration dynamically and you can reduce a lot of code
   return (
     <>
       <Navbar />
