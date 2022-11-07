@@ -23,11 +23,12 @@ app.post("/login", async (req, res) => {
     let user = await userModel.findOne({ email, password });
     console.log("user is", user);
     if (!user) {
+      // feedback: fw17_1126 - You don't need return statement, res automatically returns the flow
       return res
         .status(500)
         .send({ error_messege: "enter correct email or password" });
     }
-
+   // feedback: fw17_1126 - Never send plain text in token, always use encoded token. Use lib like: bcrypt.js
     res.send({
       token: `${user.name}`,
     });
