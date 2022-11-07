@@ -18,6 +18,7 @@ type prop = {
   setAdd?: Function;
 };
 
+// feedback: fw18_0513 - Can't we make this component smaller? I see aalot of similar code
 
 const getUserFromLocalStorage = () => {
   try {
