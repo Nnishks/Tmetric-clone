@@ -18,6 +18,9 @@ function GetCalender(){
     setValue(date)
   }
   const handleDate=(val:number)=>{
+    // feedback: fw18_0513 and fw18_0112 - Improve if conditions
+    // if (!val) 
+    // 0 is consider as falsey value in JS
     if(val===0){
         onChange(new Date())
     }
@@ -39,7 +42,7 @@ function GetCalender(){
   {/* <Calendar onChange={onChange} value={value}  /> */}
   </MenuList>
   </Menu>
-  
+      {/*feedback: fw18_0513 and fw18_0112 - Can we use loop in this to render these buttons?*/}
  <Flex gap={0}>
   <Button onClick={()=>handleDate(-1)} borderRadius="50%" p="0" bg="transparent" _hover={{border:"2px solid gray"}} size="sm"><IoIosArrowBack/></Button>
   <Button onClick={()=>handleDate(0)} borderRadius="50%" p="0" bg="transparent" _hover={{border:"2px solid gray"}}size="sm" disabled={value.getDate()===new Date().getDate()}><GoPrimitiveDot/></Button>
