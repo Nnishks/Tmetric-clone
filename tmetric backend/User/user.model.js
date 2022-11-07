@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
   password: { type: Number, required: true },
 });
 
+// feedback: fw17_1126 - Model name should be Pascal case ex: it should be User instead user
 const userModel = new mongoose.model("user", userSchema);
 
 module.exports = userModel;
