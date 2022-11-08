@@ -12,6 +12,7 @@ import axios from "axios";
 export const signupAction = (creds) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_LOADING });
   try {
+    // feedback: fw17_1126 - - Never use static URL directly as you might need to create them based on env you using into.
     let response = await axios.post(
       "https://secret-retreat-52221.herokuapp.com/user/signup",
       creds

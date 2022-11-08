@@ -63,6 +63,7 @@ const SignUp = () => {
         >
           <Box borderRadius="8">
             <Center marginTop="10">
+    {/*feedback: fw18_0112 and fw17_1126 - Don't use static URLs directly in src tag, you can pass it from any config file*/}
               <Img src="https://id.tmetric.com/images/tmetric_logo_and_text.svg" />
             </Center>
             <Box>

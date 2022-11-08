@@ -40,6 +40,7 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     setTimeFormData(newTimeFormData)
 }
 
+// feedback: fw18_0112 - If this is not needed remove this code
 // const calculateDuration=()=>{
 //     if(timeFormData.startTime && timeFormData.startTime){
 //         let [startHr, startMinStr]=timeFormData.startTime.split(":")

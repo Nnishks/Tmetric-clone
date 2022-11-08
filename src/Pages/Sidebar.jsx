@@ -67,6 +67,7 @@ const SideBar = () => {
         }}
         className={styles.toggler}
       >
+          {/*feedback: fw17_1126, fw19_0751 and fw18_0112 - - Don’t include SVGs directly into the view*/}
         {barToggle ? (
           <svg
             width="16"
