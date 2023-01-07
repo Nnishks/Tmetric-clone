@@ -4,14 +4,13 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Input,
   Text,
   Box,
   Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import styles from "./Task.module.css";
+
 function TaskFilterNav() {
   return (
     <Flex

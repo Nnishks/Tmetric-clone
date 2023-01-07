@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const RequiredAuth = ({ children }) => {
   const token = useSelector((store) => store.auth.token);

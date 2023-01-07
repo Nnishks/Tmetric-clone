@@ -10,18 +10,18 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginAction } from "../ReduxComponents/User/user.action";
+import { useToast } from "@chakra-ui/react";
+import { USER_LOGIN_SUCCESSFULL } from "../ReduxComponents/User/user.types";
 
 const Login = () => {
   const [user, setUser] = useState([]);
-  const {isAuth, token} = useSelector((store) => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,21 +33,29 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-    dispatch(loginAction(user));
+    dispatch(loginAction(user)).then((res) => {
+      console.log("sd", res);
+      if (res.type == USER_LOGIN_SUCCESSFULL) {
+        toast({
+          title: `${res.payload.message}`,
+          description: "welcome to Temtric",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        navigate("/Time");
+      } else {
+        toast({
+          title: `${res.payload}`,
+          description: `trouble in login ?reset your password `,
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
+    });
   };
 
-  // console.log("dfkk" + isAuth)
-  // console.log(token)
-
-  useEffect(()=>{
-    console.log(12334)
-    console.log(isAuth)
-
-    if (isAuth) {
-      navigate("/Time");
-    }
-  },[isAuth])
   return (
     <>
       <Flex
@@ -122,6 +130,7 @@ const Login = () => {
             padding="2"
             justifyContent="center"
             gap="4"
+            cursor="pointer"
           >
             <Img src="https://id.tmetric.com/images/google_logo.svg" />
             <Text fontSize="14px" color="#777e85" fontWeight="600">
@@ -135,6 +144,7 @@ const Login = () => {
             padding="2"
             justifyContent="center"
             gap="4"
+            cursor="pointer"
           >
             <Img src="https://id.tmetric.com/images/microsoft_logo.svg" />
             <Text fontSize="14px" color="#777e85" fontWeight="600">
@@ -148,6 +158,7 @@ const Login = () => {
             padding="2"
             justifyContent="center"
             gap="4"
+            cursor="pointer"
           >
             <Img src="https://id.tmetric.com/images/apple_logo.svg" />
             <Text fontSize="14px" color="#777e85" fontWeight="600">
@@ -170,9 +181,11 @@ const Login = () => {
           padding="2"
           color="#3070f0"
         >
-          <Text fontSize="14px" fontWeight="600">
-            Can't Log in?
-          </Text>
+          <Link to="/forgotpassword">
+            <Text fontSize="14px" fontWeight="600">
+              Can't Log in?
+            </Text>
+          </Link>
           <Link to="/signup">
             <Text fontSize="14px" fontWeight="600">
               Sign Up

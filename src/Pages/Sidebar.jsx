@@ -7,19 +7,21 @@ import { FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutAction } from "../ReduxComponents/User/user.action";
 
-import { Link, Navigate, useNavigate } from "react-router-dom";
-
+import { Link,useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 const SideBar = () => {
   const navigate = useNavigate();
   const sidebarRef = useRef(null);
-  const userName = useSelector((store) => store.auth.token.token);
+  const userName = useSelector((store) => store.auth.token);
   const dispatch = useDispatch();
   const [barToggle, setBarToggle] = useState(true);
   const [time, setTime] = useState(true);
   const [task, setTask] = useState(false);
   const [work, setwork] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const decode = jwtDecode(userName);
+  console.log("decode", decode.email);
 
   useEffect(() => {
     if (barToggle) {
@@ -132,8 +134,9 @@ const SideBar = () => {
                 }
               />
 
-              <Link to="/Time"><span>Time</span></Link>
-
+              <Link to="/Time">
+                <span>Time</span>
+              </Link>
             </div>
             <div
               className={task ? styles.selecteddiv : styles.normaldiv}
@@ -141,8 +144,9 @@ const SideBar = () => {
             >
               <BiTask style={{ fontSize: "25px" }} />
 
-              <Link to="/task"><span>Task</span></Link>
-
+              <Link to="/task">
+                <span>Task</span>
+              </Link>
             </div>
             <hr></hr>
             <div
@@ -151,8 +155,9 @@ const SideBar = () => {
             >
               <BiTask style={{ fontSize: "25px" }} />
 
-              <Link to="/work"><span>My work</span></Link>
-
+              <Link to="/work">
+                <span>My work</span>
+              </Link>
             </div>
             <hr></hr>
           </div>
@@ -194,7 +199,7 @@ const SideBar = () => {
               </Text>
               <br />
               <Text fontSize="14px" fontWeight="bold" color="#34393d">
-                {userName}
+                {decode.email}
               </Text>
             </Box>
             <Icon

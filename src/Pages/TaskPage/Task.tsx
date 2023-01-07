@@ -6,7 +6,6 @@ import {useState} from'react'
 import TaskNav from "./TaskNav";
 import styles from "./Task.module.css";
 import SideBar from "../Sidebar"
-import { Box } from "@chakra-ui/react";
 
 function Task() {
     const [add,setAdd]=useState(false)

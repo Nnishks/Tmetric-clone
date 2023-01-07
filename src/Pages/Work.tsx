@@ -4,7 +4,6 @@ import { BiNotepad } from "react-icons/bi";
 import { BiTimeFive } from "react-icons/bi";
 import { IoCaretForwardCircleSharp } from "react-icons/io5";
 import styles from '../Styles/Work.module.css';
-import { RiMenu2Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import SideBar from './Sidebar';
 

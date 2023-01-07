@@ -1,4 +1,4 @@
-import { Box, HStack, Flex, Menu, MenuButton, MenuList, MenuItem, Button, Text, Icon, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, Text, Icon, useMediaQuery } from '@chakra-ui/react'
 import {AiFillPlayCircle} from "react-icons/ai"
 import { CgPlayStopO } from "react-icons/cg"
 import { IoMdAddCircle } from "react-icons/io"

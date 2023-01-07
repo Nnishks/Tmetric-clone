@@ -2,8 +2,8 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import {BiTime} from "react-icons/bi"
 import {IoMdTime} from "react-icons/io"
 
-import { Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, InputRightAddon, useMediaQuery } from '@chakra-ui/react'
-import React, {useState,useEffect} from 'react'
+import { Box, Button, Flex, FormLabel, Input, InputGroup, InputRightAddon, useMediaQuery } from '@chakra-ui/react'
+import React, {useState} from 'react'
 
 type Proptype={
     handleCancel:Function;

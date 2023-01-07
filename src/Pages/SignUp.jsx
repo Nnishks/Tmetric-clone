@@ -9,18 +9,18 @@ import {
   Img,
   Input,
   Text,
+  useToast,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { signupAction } from "../ReduxComponents/User/user.action";
+import { USER_SIGNUP_SUCCESSFULL } from "../ReduxComponents/User/user.types";
 
 const SignUp = () => {
   const [user, setUser] = useState({});
-  const token = useSelector((store) => store.auth.token);
-  console.log("token is", token);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,17 +32,37 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hi");
-    dispatch(signupAction(user));
-    console.log(user);
-  };
-
-  useEffect(()=>{
-    if (token) {
-      navigate("/login");
+    if (user.password < 6) {
+      toast({
+        title: "password should have more than 6 charecters",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      dispatch(signupAction(user)).then((res) => {
+        
+        if (res.type == USER_SIGNUP_SUCCESSFULL) {
+          toast({
+            title: `${res.payload.message}`,
+            description: "please click login to continue",
+            status: "success",
+            duration: 2000,
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: `${res.payload}`,
+            description:
+              "please try with another email, or reset your password",
+            status: "error",
+            duration: 2000,
+            isClosable: true,
+          });
+        }
+      });
     }
-  }, [token])
-
+  };
 
   return (
     <>
